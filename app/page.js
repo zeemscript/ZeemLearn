@@ -1,7 +1,7 @@
 "use client";
 import { IoIosSend } from "react-icons/io";
 import { useState } from "react";
-import Image from "next/image";
+
 
 
 export default function Home() {
