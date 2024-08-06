@@ -1,4 +1,4 @@
-"use client";
+// SetupStage1.js
 import React, { useState } from "react";
 import {
   Card,
@@ -19,16 +19,21 @@ import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import { AtSign } from "lucide-react";
 import { Phone } from "lucide-react";
+import { toast } from "sonner";
 import CountrySelector from "@/components/atoms/Countries";
 import { ArrowBigRight } from "lucide-react";
 
-const SetupStage1 = () => {
+const SetupStage1 = ({ onStage1Complete }) => {
   const [username, setUsername] = useState("");
   const [phonenumber, setPhoneNumber] = useState();
   const [country, setCountry] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    toast.success("submitted");
+    onStage1Complete();
   };
+
   return (
     <div className="flex justify-center ">
       <Card className="w-[450px] bg-gradient-to-r from-cyan-500 to-blue-500">
