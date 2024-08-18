@@ -16,7 +16,7 @@ const Input = React.forwardRef(({ className, type, icon, ...props }, ref) => {
         {...props}
       />
       {icon && (
-        <div className="absolute right-3 top-1/2 -translate-y-1/2">{icon}</div>
+        <div className="absolute right-3 top-1/2 -translate-y-1/2 flex justify-center items-center space-x-2">{icon}</div>
       )}
     </div>
   );

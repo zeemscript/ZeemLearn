@@ -1,7 +1,5 @@
-import { BellRing, Check } from "lucide-react";
-
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
+"use client";
+import React, { useState } from "react";
 import {
   Card,
   CardContent,
@@ -10,68 +8,53 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Switch } from "@/components/ui/switch";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Check } from "lucide-react";
 
-const notifications = [
-  {
-    title: "Your call has been confirmed.",
-    description: "1 hour ago",
-  },
-  {
-    title: "You have a new message!",
-    description: "1 hour ago",
-  },
-  {
-    title: "Your subscription is expiring soon!",
-    description: "2 hours ago",
-  },
-];
+const SetupStage2 = ({ onStage2Complete }) => {
+  const [image, setImage] = useState(null);
+  const [agreed, setAgreed] = useState(false);
 
+  const handleSubmit = () => {
+    if (!image || !agreed) {
+      toast.error("Please upload a profile picture and agree to the terms.");
+      return;
+    }
+    onStage2Complete();
+  };
 
-export  default function SetupStage2({ className, ...props }) {
   return (
-    <Card className={cn("w-[380px]", className)} {...props}>
-      <CardHeader>
-        <CardTitle>Notifications</CardTitle>
-        <CardDescription>You have 3 unread messages.</CardDescription>
-      </CardHeader>
-      <CardContent className="grid gap-4">
-        <div className=" flex items-center space-x-4 rounded-md border p-4">
-          <BellRing />
-          <div className="flex-1 space-y-1">
-            <p className="text-sm font-medium leading-none">
-              Push Notifications
-            </p>
-            <p className="text-sm text-muted-foreground">
-              Send notifications to device.
-            </p>
+    <div className="flex justify-center items-center">
+      <Card className="w-[380px]">
+        <CardHeader>
+          <CardTitle>Setup Your Profile</CardTitle>
+          <CardDescription>Please complete your profile setup.</CardDescription>
+        </CardHeader>
+        <CardContent className="grid gap-4">
+          <Input
+            type="file"
+            accept="image/*"
+            onChange={(e) => setImage(URL.createObjectURL(e.target.files[0]))}
+          />
+          <div className="flex items-center space-x-2">
+            <input
+              type="checkbox"
+              checked={agreed}
+              onChange={(e) => setAgreed(e.target.checked)}
+            />
+            <span>I agree to the terms and rules and regulation.</span>
           </div>
-          <Switch />
-        </div>
-        <div>
-          {notifications.map((notification, index) => (
-            <div
-              key={index}
-              className="mb-4 grid grid-cols-[25px_1fr] items-start pb-4 last:mb-0 last:pb-0"
-            >
-              <span className="flex h-2 w-2 translate-y-1 rounded-full bg-sky-500" />
-              <div className="space-y-1">
-                <p className="text-sm font-medium leading-none">
-                  {notification.title}
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  {notification.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </CardContent>
-      <CardFooter>
-        <Button className="w-full">
-          <Check className="mr-2 h-4 w-4" /> Mark all as read
-        </Button>
-      </CardFooter>
-    </Card>
+        </CardContent>
+        <CardFooter>
+          <Button onClick={handleSubmit} className="w-full">
+            <Check className="mr-2 h-4 w-4" /> Submit
+          </Button>
+        </CardFooter>
+      </Card>
+    </div>
+  
   );
-}
+};
+
+export default SetupStage2;

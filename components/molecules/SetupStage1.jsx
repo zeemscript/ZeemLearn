@@ -1,4 +1,4 @@
-// SetupStage1.js
+"use client";
 import React, { useState } from "react";
 import {
   Card,
@@ -8,39 +8,35 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import {
-  Select,
-  SelectContent,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
-import { AtSign } from "lucide-react";
-import { Phone } from "lucide-react";
+import { AtSign, Phone, ArrowBigRight } from "lucide-react";
 import { toast } from "sonner";
 import CountrySelector from "@/components/atoms/Countries";
-import { ArrowBigRight } from "lucide-react";
 
 const SetupStage1 = ({ onStage1Complete }) => {
   const [username, setUsername] = useState("");
-  const [phonenumber, setPhoneNumber] = useState();
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [country, setCountry] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    toast.success("submitted");
+    if (!username || !phoneNumber || !country) {
+      toast.error("Please fill all fields.");
+      return;
+    }
+    toast.success("Profile setup submitted!");
     onStage1Complete();
   };
 
   return (
-    <div className="flex justify-center ">
+    <div className="flex justify-center">
       <Card className="w-[450px] bg-gradient-to-r from-cyan-500 to-blue-500">
         <CardHeader>
           <CardTitle>Setup Your Profile</CardTitle>
           <CardDescription>
-            Add your informations so that people can know you better.
+            Add your information so that people can know you better.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -51,38 +47,26 @@ const SetupStage1 = ({ onStage1Complete }) => {
                 <Input
                   id="name"
                   placeholder="username"
+                  value={username}
                   onChange={(e) => setUsername(e.target.value)}
                   icon={<AtSign className="h-4 w-4 text-gray-500" />}
                 />
               </div>
               <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="name">Phone Number</Label>
+                <Label htmlFor="phone">Phone Number</Label>
                 <Input
-                  id="phone number"
+                  id="phone"
                   placeholder="phone number"
+                  value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   icon={<Phone className="h-4 w-4 text-gray-500" />}
                 />
               </div>
               <div className="flex flex-col space-y-1.5">
-                <Label htmlFor="framework">Country</Label>
-                <Select>
-                  <SelectTrigger id="framework">
-                    <SelectValue
-                      placeholder="Select"
-                      onChange={(e) => {
-                        const countryCode = e.target.value;
-                        const countryName = countryList()
-                          .getData()
-                          .find((option) => option.value === countryCode).label;
-                        setCountry(countryName);
-                      }}
-                    />
-                  </SelectTrigger>
-                  <SelectContent position="popper">
-                    <CountrySelector />
-                  </SelectContent>
-                </Select>
+                <Label htmlFor="country">Country</Label>
+                <CountrySelector
+                  onCountryChange={(value) => setCountry(value)}
+                />
               </div>
             </div>
             <CardFooter className="flex justify-end pt-8">
