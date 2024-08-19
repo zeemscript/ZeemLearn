@@ -11,6 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { toast } from "sonner";
 
 const SetupStage2 = ({ onStage2Complete }) => {
   const [image, setImage] = useState(null);

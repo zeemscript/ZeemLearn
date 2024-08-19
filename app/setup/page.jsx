@@ -4,8 +4,10 @@ import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator"
 import SetupStage1 from "@/components/molecules/SetupStage1";
 import SetupStage2 from "@/components/molecules/SetupStage2";
-
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 const Setup = () => {
+  const router = useRouter();
   const [stage, setStage] = useState(1);
 
   const handleStage1Complete = () => {
@@ -13,7 +15,8 @@ const Setup = () => {
   };
 
   const handleStage2Complete = () => {
-    console.log("Setup Complete");
+    toast.success("Setup Complete");
+    router.push("/dashboard");
   };
 
   return (

@@ -45,7 +45,7 @@ const Navbar = () => {
         href="/"
         className="text-lg font-bold text-cyan-500 dark:text-cyan-300"
       >
-        TALKATIVE
+        TeachLeadX
       </Link>
 
       {user ? (
@@ -62,7 +62,7 @@ const Navbar = () => {
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Welcome to Talkative.</DialogTitle>
+              <DialogTitle>Welcome to TeachLeadX.</DialogTitle>
               <DialogDescription>
                 {isLogin ? (
                   <Login onSuccess={handleClose} setIsOpen={setIsOpen} />
