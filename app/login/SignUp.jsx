@@ -27,18 +27,16 @@ const SignUp = ({ onSuccess, setIsOpen }) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    // Validate if any field is empty
     if (!formData.email || !formData.password || !formData.confirmPassword) {
       toast.warning("Please fill all input fields");
-      setIsOpen(true); // Keep dialog open
+      setIsOpen(true);
       return;
     }
 
-    // Validate if passwords match
+
     if (formData.password !== formData.confirmPassword) {
       toast.warning("Passwords do not match");
-      setIsOpen(true); // Keep dialog open
+      setIsOpen(true);
       return;
     }
 
@@ -46,7 +44,7 @@ const SignUp = ({ onSuccess, setIsOpen }) => {
     try {
       await register(formData.email, formData.password);
       toast.success("Account created successfully");
-      onSuccess(); // Call success callback
+      onSuccess(); 
       router.push("/dashboard");
     } catch (error) {
       toast.error("Error Signing up.");

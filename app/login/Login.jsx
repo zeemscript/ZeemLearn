@@ -29,7 +29,7 @@ const Login = ({ onSuccess, setIsOpen }) => {
       await login(email, password);
       toast.success("Logged in successfully");
       onSuccess();
-      router.push("/setup");
+      router.push("/dashboard");
     } catch (e) {
       toast.error(e.message);
     } finally {

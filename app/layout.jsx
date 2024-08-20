@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "TeachLeadX",
-  description: "Talk more, connect more",
+  description: "Empowering Education, Inspiring Innovation.",
 };
 
 export default function RootLayout({ children }) {
