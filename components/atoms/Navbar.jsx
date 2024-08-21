@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import Login from "@/app/login/Login";
 import SignUp from "@/app/login/SignUp";
@@ -40,12 +41,15 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="p-2 sm:p-6 flex justify-between items-center dark:bg-gray-900 dark:text-gray-100">
-      <Link
-        href="/"
-        className="text-lg font-bold text-cyan-500 dark:text-cyan-300"
-      >
-        TeachLeadX
+    <nav className="h-16 p-2 sm:p-4 flex justify-between items-center dark:bg-gray-900 dark:text-gray-100">
+      <Link href="/" className="flex items-center">
+        <Image
+          alt="TLX Logo"
+          src="/images/TLX_logo.png"
+          width={70}
+          height={40} // Increased height for better visibility
+          className="object-contain" // Ensures the image fits within the specified dimensions
+        />
       </Link>
 
       {user ? (

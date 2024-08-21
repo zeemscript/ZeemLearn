@@ -3,6 +3,7 @@ import "@/styles/globals.css";
 import Navbar from "@/components/atoms/Navbar";
 import { Toaster } from "sonner";
 import NextTopLoader from "nextjs-toploader";
+import Footer from "@/components/atoms/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
         <main className="bg-white ">
           {children}
         </main>
+        <Footer />
         <Toaster />
       </body>
     </html>
