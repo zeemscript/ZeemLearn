@@ -98,6 +98,11 @@ const Footer = () => {
                 <div className="hover:text-gray-900 cursor-pointer">Blog</div>
               </Link>
             </li>
+            <li>
+              <Link href="/Termofuse" passHref>
+                <div className="hover:text-gray-900 cursor-pointer">Term of use</div>
+              </Link>
+            </li>
           </ul>
         </div>
 
