@@ -5,11 +5,11 @@ const ContactUs = () => {
   return (
     <div
       id="contact"
-      className="conatainer mx-auto mr-40 bg-blue-500 flex flex-col items-center py-12 px-4"
+      className="flex flex-col items-center justify-center min-h-screen bg-blue-500 px-4"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl w-full mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl w-full mx-auto">
         {/* Image Section */}
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center">
           <Image
             src="/images/work.png"
             alt="Contact Us"
@@ -20,7 +20,7 @@ const ContactUs = () => {
         </div>
 
         {/* Contact Form Section */}
-        <div className="bg-white shadow-lg rounded-lg p-8 flex flex-col justify-center w-full">
+        <div className="bg-white shadow-lg rounded-lg p-8 w-full flex flex-col justify-center">
           <h2 className="text-3xl font-bold text-center mb-6 text-black">
             Contact Us
           </h2>
