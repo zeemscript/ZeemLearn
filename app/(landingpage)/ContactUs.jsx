@@ -6,13 +6,13 @@ const ContactUs = () => {
   return (
     <div
       id="contact"
-      className="bg-blue-500 flex flex-col items-center py-12 px-4"
+      className="conatainer mx-auto mr-40 bg-blue-500 flex flex-col items-center py-12 px-4"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl w-full">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl w-full mx-auto">
         {/* Image Section */}
-        <div className="flex justify-center lg:order-1 order-2">
-                  <Image
-                      src="/images/work.png"
+        <div className="flex justify-center items-center">
+          <Image
+            src="/images/work.png"
             alt="Contact Us"
             width={400}
             height={400}
@@ -21,7 +21,7 @@ const ContactUs = () => {
         </div>
 
         {/* Contact Form Section */}
-        <div className="bg-white shadow-lg rounded-lg p-8 w-full lg:order-2 order-1">
+        <div className="bg-white shadow-lg rounded-lg p-8 flex flex-col justify-center w-full">
           <h2 className="text-3xl font-bold text-center mb-6 text-black">
             Contact Us
           </h2>

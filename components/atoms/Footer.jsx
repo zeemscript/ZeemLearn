@@ -141,29 +141,34 @@ const Footer = () => {
           <div className="flex space-x-6 mb-6 md:mb-0">
             <Link href="https://facebook.com" passHref>
               <div className="hover:text-gray-900 cursor-pointer">
-                <FaFacebookF />
+                <FaFacebookF size={25} />
               </div>
             </Link>
             <Link href="https://twitter.com" passHref>
               <div className="hover:text-gray-900 cursor-pointer">
-                <FaTwitter />
+                <FaTwitter size={25} />
               </div>
             </Link>
             <Link href="https://instagram.com" passHref>
               <div className="hover:text-gray-900 cursor-pointer">
-                <FaInstagram />
+                <FaInstagram size={25} />
               </div>
             </Link>
             <Link href="https://linkedin.com" passHref>
               <div className="hover:text-gray-900 cursor-pointer">
-                <FaLinkedinIn />
+                <FaLinkedinIn size={25} />
               </div>
             </Link>
           </div>
 
           {/* Copyright */}
-          <div className="text-sm text-black">
-            © {new Date().getFullYear()} TeachLeadX All rights reserved.
+          <div className="text-md text-black font-serif">
+            © {new Date().getFullYear()}{" "}
+            <span className="text-md font-bold text-[#113A69] mb-4 font-serif px-1 ">
+              TeachLeadX
+            </span>
+            {""}
+            All rights reserved.
           </div>
         </div>
       </div>

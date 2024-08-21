@@ -6,13 +6,15 @@ import About from './(landingpage)/About';
 import Courses from './(landingpage)/Courses';
 import ContactUs from './(landingpage)/Contactus';
 import Suscribe from './(landingpage)/Suscribe';
+import Info from './(landingpage)/Info';
 const Home = () => {
   return (
     <>
       <Hero />
       <About />
       <Courses />
-      <ContactUs/>
+      <ContactUs />
+    <Info/>
       <Suscribe />
     </>
   );
