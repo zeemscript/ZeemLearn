@@ -19,12 +19,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
-
-
-
-
-
-
 const Navbar = () => {
   const user = useAuth();
   const router = useRouter();
@@ -68,19 +62,19 @@ const Navbar = () => {
           href={"#aboutus"}
           className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
         >
-     About
+          About
         </Link>
         <Link
-          href={ "/"}
+          href="#courses"
           className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
         >
-          Collections
+          Courses
         </Link>
         <Link
-          href="#aboutus"
+          href="#vision"
           className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
         >
-          About Us
+          Our Vision
         </Link>
         <Link
           href="/blog"

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { Separator } from "@radix-ui/react-context-menu";
-export default function Info() {
+export default function Info({id}) {
   return (
-    <section className="flex flex-col items-center justify-center px-6 py-12 bg-blue-500 text-white">
+    <section id={id} className="flex flex-col items-center justify-center px-6 py-12 bg-blue-500 text-white">
       <div className="text-center mb-8">
         <span className="text-4xl sm:text-5xl font-serif font-thin">
           Our Vision
@@ -34,7 +34,7 @@ export default function Info() {
           <span className="text-4xl sm:text-5xl font-serif font-thin">
             Our Mision
           </span>
-          <Separator className="w-52 bg-black  h-1 my-1" />{" "}
+          <Separator className="w-52 bg-black  h-1 my-1" />
           <p className="text-base md:text-lg leading-relaxed">
             The mission of TeachLeadX is to provide comprehensive online courses
             that cater to the diverse needs of learners across the globe. The

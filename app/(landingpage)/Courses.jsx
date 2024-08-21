@@ -9,9 +9,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-const Courses = () => {
+const Courses = ({id}) => {
   return (
-    <div className="font-serif bg-blue-500 py-12 px-4 sm:px-6 lg:px-8">
+    <div id={id} className="font-serif bg-blue-500 py-12 px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-8">
         <span className="block text-3xl font-semibold text-white sm:text-4xl md:text-5xl lg:text-6xl">
           Explore Courses

@@ -12,10 +12,10 @@ const Home = () => {
     <>
       <Hero />
       <About id="aboutus"/>
-      <Courses />
+      <Courses id={"courses"}/>
       <ContactUs id={"contact"}/>
-      <Whyus/>
-      <Info />
+      <Whyus id={"whyus"}/>
+      <Info id={"vision"}/>
       <Suscribe />
     </>
   );
