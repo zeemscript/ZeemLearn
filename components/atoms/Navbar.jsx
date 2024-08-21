@@ -19,6 +19,12 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 
+
+
+
+
+
+
 const Navbar = () => {
   const user = useAuth();
   const router = useRouter();
@@ -46,11 +52,49 @@ const Navbar = () => {
         <Image
           alt="TLX Logo"
           src="/images/TLX_logo.png"
-          width={70}
-          height={40} // Increased height for better visibility
-          className="object-contain" // Ensures the image fits within the specified dimensions
+          width={100}
+          height={40}
+          className="object-contain"
         />
       </Link>
+      <div className="hidden md:flex md:gap-6">
+        <Link
+          href="/"
+          className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+        >
+          Home
+        </Link>
+        <Link
+          href={"#aboutus"}
+          className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+        >
+     About
+        </Link>
+        <Link
+          href={ "/"}
+          className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+        >
+          Collections
+        </Link>
+        <Link
+          href="#aboutus"
+          className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+        >
+          About Us
+        </Link>
+        <Link
+          href="/blog"
+          className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+        >
+          Blog
+        </Link>
+        <Link
+          href="#contact"
+          className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+        >
+          Contact Us
+        </Link>
+      </div>
 
       {user ? (
         <Button

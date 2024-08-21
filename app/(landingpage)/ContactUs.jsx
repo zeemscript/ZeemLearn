@@ -1,10 +1,10 @@
 "use client";
 import Image from "next/image";
 
-const ContactUs = () => {
+const ContactUs = ({id}) => {
   return (
     <div
-      id="contact"
+      id={id}
       className="flex flex-col items-center justify-center min-h-screen bg-blue-500 px-4"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl w-full mx-auto">

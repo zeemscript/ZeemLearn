@@ -1,29 +1,38 @@
 import React from 'react'
 import Image from 'next/image';
-const About = () => {
+const About = ({id}) => {
   return (
-    <section className="bg-white dark:bg-gray-900 py-12 px-6 sm:px-12 lg:px-24">
+    <section id={id} className="bg-white dark:bg-gray-900 py-12 px-6 sm:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl sm:text-6xl font-serif font-semibold text-center text-gray-800 dark:text-white mb-8">
           About Us
         </h2>
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="md:w-1/2 text-gray-700 dark:text-gray-300">
+          <div className="md:w-1/2 text-gray-700 text-lg font-serif dark:text-gray-300 pt-1 sm:pt-4">
             <p className="mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p className="mb-4">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum.
+               At TeachLeadX, we are committed to empowering learners
+              worldwide through accessible, flexible, and high-quality
+              education. Founded by Dr. Kalu Thankgod Ugochukwu, TeachLeadX
+              serves as a global platform for open online courses, designed to
+              meet the diverse needs of students, professionals, and lifelong
+              learners. Our mission is to bridge the educational gap by
+              providing comprehensive, innovative, and tailored learning
+              experiences that foster personal and professional growth.
             </p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              We believe in the transformative power of education and strive to
+              create opportunities for learners to excel in their chosen fields.
+              Our courses are developed by industry experts and seasoned
+              educators, ensuring that each program is relevant, engaging, and
+              aligned with the latest trends and advancements.
+            </p>
+            <p className="mb-4">
+              Whether you&amp;re looking to advance your career, acquire new
+              skills, or explore new interests, TeachLeadX offers a dynamic
+              learning environment that adapts to your pace and schedule. Join
+              us at TeachLeadX and take the next step in your educational
+              journey with a community that values excellence, inclusivity, and
+              lifelong learning.
             </p>
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0 md:pl-12">

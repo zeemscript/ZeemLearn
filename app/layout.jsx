@@ -15,11 +15,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${inter.className} "flex h-screen"`}>
-        <NextTopLoader color="#30000" showSpinner={false} />
+        <NextTopLoader color="#00BFFF" showSpinner={false} />
         <Navbar />
-        <main className="bg-white ">
-          {children}
-        </main>
+        <main className="bg-white ">{children}</main>
         <Footer />
         <Toaster />
       </body>

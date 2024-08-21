@@ -11,26 +11,55 @@ import { MdLocationOn } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className=" bg-blue-500 text-blue-100 py-10 px-6">
+    <footer className="bg-blue-500 text-blue-100 py-10 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
         {/* Company Info */}
         <div>
-          <h2 className="text-3xl font-bold text-[#113A69] mb-4 font-serif ">
+          <h2 className="text-3xl font-bold text-[#113A69] mb-4 font-serif">
             TeachLeadX
           </h2>
           <p className="mb-4">
             We provide the best services to help your business grow. Join us to
             experience top-notch solutions tailored to your needs.
           </p>
-          <div className="flex items-center mb-2">
-            <MdLocationOn className="mr-2 text-black" size={30} /> 1234 Business
-            Street, City, Country
-          </div>
-          <div className="flex items-center mb-2">
-            <FiPhone className="mr-2 text-black" size={20} /> +123-456-7890
-          </div>
-          <div className="flex items-center">
-            <FiMail className="mr-2 text-black" size={20} /> info@yourbrand.com
+          <div className="space-y-4">
+            {/* First Location */}
+            <div className="flex flex-col space-y-2">
+              <div className="flex items-start">
+                <MdLocationOn className="mr-2 text-black" size={24} />
+                <div>
+                  <span className="font-semibold">Headquarters:</span> 4 Mike
+                  Akhigbe Way, Jabi, Abuja, Nigeria.
+                </div>
+              </div>
+              <div className="flex items-start">
+                <FiPhone className="mr-2 text-black" size={20} />
+                +234 (0) 802-205-0078
+              </div>
+              <div className="flex items-start">
+                <FiMail className="mr-2 text-black" size={20} />
+                admin@teachleadx.com
+              </div>
+            </div>
+
+            {/* Second Location */}
+            {/* <div className="flex flex-col space-y-2 mt-6">
+              <div className="flex items-start">
+                <MdLocationOn className="mr-2 text-black" size={24} />
+                <div>
+                  <span className="font-semibold">International Office:</span>{" "}
+                  355 N Richardson Ave, Roswell, NM, USA.
+                </div>
+              </div>
+              <div className="flex items-start">
+                <FiPhone className="mr-2 text-black" size={20} />
+                +1 (575) 252-7750
+              </div>
+              <div className="flex items-start">
+                <FiMail className="mr-2 text-black" size={20} />
+                admin@teachleadx.com
+              </div>
+            </div> */}
           </div>
         </div>
 
@@ -164,10 +193,9 @@ const Footer = () => {
           {/* Copyright */}
           <div className="text-md text-black font-serif">
             © {new Date().getFullYear()}{" "}
-            <span className="text-md font-bold text-[#113A69] mb-4 font-serif px-1 ">
+            <span className="text-md font-bold text-[#113A69] mb-4 font-serif px-1">
               TeachLeadX
-            </span>
-            {""}
+            </span>{" "}
             All rights reserved.
           </div>
         </div>
