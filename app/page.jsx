@@ -8,6 +8,7 @@ import Suscribe from "./(landingpage)/Suscribe";
 import Info from "./(landingpage)/Info";
 import Whyus from "./(landingpage)/Whyus";
 import Empower from "./(landingpage)/Empower";
+import Team from "./(landingpage)/Team";
 const Home = () => {
   return (
     <>
@@ -17,7 +18,8 @@ const Home = () => {
       <Empower />
       <ContactUs id={"contact"}/>
       <Whyus id={"whyus"}/>
-      <Info id={"vision"}/>
+      <Info id={"vision"} />
+      <Team/>
       <Suscribe />
     </>
   );

@@ -5,6 +5,8 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedinIn,
+  FaDiscord,
+  FaYoutube,
 } from "react-icons/fa";
 import { FiMail, FiPhone } from "react-icons/fi";
 import { MdLocationOn } from "react-icons/md";
@@ -28,7 +30,7 @@ const Footer = () => {
               <div className="flex items-start">
                 <MdLocationOn className="mr-2 text-black" size={24} />
                 <div>
-                  <span className="font-semibold">Headquarters:</span> 4 Mike
+                  <span className="font-semibold">Headquarters:</span> 460 Mike
                   Akhigbe Way, Jabi, Abuja, Nigeria.
                 </div>
               </div>
@@ -100,7 +102,9 @@ const Footer = () => {
             </li>
             <li>
               <Link href="/Termofuse" passHref>
-                <div className="hover:text-gray-900 cursor-pointer">Term of use</div>
+                <div className="hover:text-gray-900 cursor-pointer">
+                  Term of use
+                </div>
               </Link>
             </li>
           </ul>
@@ -115,28 +119,42 @@ const Footer = () => {
             <li>
               <Link href="/services/web-development" passHref>
                 <div className="hover:text-gray-900 cursor-pointer">
-                  Web Development
+                  Research
                 </div>
               </Link>
             </li>
             <li>
               <Link href="/services/marketing" passHref>
                 <div className="hover:text-gray-900 cursor-pointer">
-                  Marketing
+                  Online courses
                 </div>
               </Link>
             </li>
             <li>
               <Link href="/services/consulting" passHref>
                 <div className="hover:text-gray-900 cursor-pointer">
-                  Consulting
+                  Live classes
                 </div>
               </Link>
             </li>
             <li>
               <Link href="/services/support" passHref>
                 <div className="hover:text-gray-900 cursor-pointer">
-                  Customer Support
+                  Educational consultation
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/support" passHref>
+                <div className="hover:text-gray-900 cursor-pointer">
+                  Book store
+                </div>
+              </Link>
+            </li>
+            <li>
+              <Link href="/services/support" passHref>
+                <div className="hover:text-gray-900 cursor-pointer">
+                  Web Development
                 </div>
               </Link>
             </li>
@@ -173,24 +191,34 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           {/* Social Media Icons */}
           <div className="flex space-x-6 mb-6 md:mb-0">
-            <Link href="https://facebook.com" passHref>
+            <Link href="https://www.facebook.com/teachleadx" passHref>
               <div className="hover:text-gray-900 cursor-pointer">
                 <FaFacebookF size={25} />
               </div>
             </Link>
-            <Link href="https://twitter.com" passHref>
+            <Link href="https://x.com/teachleadx" passHref>
               <div className="hover:text-gray-900 cursor-pointer">
                 <FaTwitter size={25} />
               </div>
             </Link>
-            <Link href="https://instagram.com" passHref>
+            <Link href="https://www.instagram.com/teachleadx/" passHref>
               <div className="hover:text-gray-900 cursor-pointer">
                 <FaInstagram size={25} />
               </div>
             </Link>
-            <Link href="https://linkedin.com" passHref>
+            <Link href="https://www.linkedin.com/company/teachleadx/" passHref>
               <div className="hover:text-gray-900 cursor-pointer">
                 <FaLinkedinIn size={25} />
+              </div>
+            </Link>
+            <Link href="https://discord.com/channels/teachleadx" passHref>
+              <div className="hover:text-gray-900 cursor-pointer">
+                <FaDiscord size={25} />
+              </div>
+            </Link>
+            <Link href="https://youtube.com/@teachleadx" passHref>
+              <div className="hover:text-gray-900 cursor-pointer">
+                <FaYoutube size={25} />
               </div>
             </Link>
           </div>
