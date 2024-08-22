@@ -1,5 +1,5 @@
+"use clent";
 import Image from "next/image";
-
 const teamMembers = [
   {
     name: "John Doe",

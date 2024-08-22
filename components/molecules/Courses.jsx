@@ -1,3 +1,4 @@
+"use clent";
 import * as React from "react";
 import Image from "next/image";
 import Search from "../atoms/Search";
@@ -43,7 +44,11 @@ export default function Course() {
 
   return (
     <div>
-      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <Search
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        className="mx-32"
+      />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-8 lg:px-16 py-12">
         {filteredCourses.length > 0 ? (
           filteredCourses.map((course, index) => (

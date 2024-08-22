@@ -1,3 +1,5 @@
+"use clent";
+
 import React from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -9,7 +11,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-const Courses = ({id}) => {
+const Courses = ({ id }) => {
   return (
     <div id={id} className="font-serif bg-blue-500 py-12 px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-8">

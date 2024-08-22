@@ -1,6 +1,8 @@
-import React from 'react'
-import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+"use clent";
+
+import React from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 const Hero = () => {
   return (
     <div className="flex flex-col h-[90vh] justify-center items-center  mx-auto my-auto bg-hero bg-cover bg-center font-serif">
@@ -20,6 +22,6 @@ const Hero = () => {
       </div>
     </div>
   );
-}
+};
 
-export default Hero
+export default Hero;

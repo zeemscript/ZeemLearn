@@ -32,60 +32,64 @@ export default function Search({ searchTerm, setSearchTerm }) {
   };
 
   return (
-    <Popover open={open} onOpenChange={setOpen} className="w-full">
-      <PopoverTrigger asChild>
-        <Button
-          variant="outline"
-          role="combobox"
-          aria-expanded={open}
-          className="w-full justify-between"
-        >
-          {searchTerm || "Search for a course..."}
-          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="w-[300px] p-0">
-        <Command>
-          <CommandInput
-            placeholder="Search course..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                handleSelect(e.target.value);
-              }
-            }}
-          />
-          <CommandList>
-            <CommandEmpty>No course found.</CommandEmpty>
-            <CommandGroup>
-              {frameworks
-                .filter((framework) =>
-                  framework.label
-                    .toLowerCase()
-                    .includes(searchTerm.toLowerCase())
-                )
-                .map((framework) => (
-                  <CommandItem
-                    key={framework.value}
-                    value={framework.label}
-                    onSelect={() => handleSelect(framework.label)}
-                  >
-                    <Check
-                      className={cn(
-                        "mr-2 h-4 w-4",
-                        searchTerm === framework.label
-                          ? "opacity-100"
-                          : "opacity-0"
-                      )}
-                    />
-                    {framework.label}
-                  </CommandItem>
-                ))}
-            </CommandGroup>
-          </CommandList>
-        </Command>
-      </PopoverContent>
-    </Popover>
+    <div className="mx-4">
+      {" "}
+      {/* Container with side margins */}
+      <Popover open={open} onOpenChange={setOpen} className="w-full">
+        <PopoverTrigger asChild>
+          <Button
+            variant="outline"
+            role="combobox"
+            aria-expanded={open}
+            className="w-full justify-between"
+          >
+            {searchTerm || "Search for a course..."}
+            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+          </Button>
+        </PopoverTrigger>
+        <PopoverContent className="w-[300px] p-0">
+          <Command>
+            <CommandInput
+              placeholder="Search course..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  handleSelect(e.target.value);
+                }
+              }}
+            />
+            <CommandList>
+              <CommandEmpty>No course found.</CommandEmpty>
+              <CommandGroup>
+                {frameworks
+                  .filter((framework) =>
+                    framework.label
+                      .toLowerCase()
+                      .includes(searchTerm.toLowerCase())
+                  )
+                  .map((framework) => (
+                    <CommandItem
+                      key={framework.value}
+                      value={framework.label}
+                      onSelect={() => handleSelect(framework.label)}
+                    >
+                      <Check
+                        className={cn(
+                          "mr-2 h-4 w-4",
+                          searchTerm === framework.label
+                            ? "opacity-100"
+                            : "opacity-0"
+                        )}
+                      />
+                      {framework.label}
+                    </CommandItem>
+                  ))}
+              </CommandGroup>
+            </CommandList>
+          </Command>
+        </PopoverContent>
+      </Popover>
+    </div>
   );
 }
