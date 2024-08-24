@@ -52,7 +52,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="h-16 p-2 sm:p-4 flex justify-between items-center bg-white w-full mb-40 fixed z-10">
+    <nav className="h-16 p-2 sm:p-4 flex justify-between items-center bg-white w-full  fixed z-10">
       <Link href="/" className="flex items-center">
         <Image
           alt="TLX Logo"

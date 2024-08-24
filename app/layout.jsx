@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           <NextTopLoader color="#00BFFF" showSpinner={false} />
           <Navbar />
-          <main className="bg-white">
+          <main className="bg-white pt-10">
             {children}
             {/* <ToTop /> */}
           </main>
