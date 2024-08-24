@@ -4,7 +4,7 @@ const teamMembers = [
   {
     name: "John Doe",
     role: "CEO & Founder",
-    image: "/images/tlxlandimage.jpg", // Replace with actual image paths
+    image: "/images/tlxlandimage.jpg",
   },
   {
     name: "Jane Smith",

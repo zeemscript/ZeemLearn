@@ -1,8 +1,7 @@
 "use clent";
 import React from "react";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
+
 
 const Empower = ({ id }) => {
   return (
@@ -11,7 +10,7 @@ const Empower = ({ id }) => {
         <span className="text-4xl sm:text-5xl font-serif font-thin">
           Empower Yourself.
         </span>
-        <Separator className="w-80 bg-black my-2" />
+        <Separator className="w-60 bg-black my-2" />
         <p className="px-0 sm:px-10 py-4">
           We believe that education is the key to a better world, through
           education everyone can be empowered. Innovation, technology and

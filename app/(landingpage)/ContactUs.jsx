@@ -5,7 +5,7 @@ const ContactUs = ({id}) => {
   return (
     <div
       id={id}
-      className="flex flex-col items-center justify-center min-h-screen bg-blue-500 px-4"
+      className="flex flex-col items-center justify-center min-h-screen bg-blue-500 px-4 sm:py-0 py-10"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl w-full mx-auto">
         {/* Image Section */}

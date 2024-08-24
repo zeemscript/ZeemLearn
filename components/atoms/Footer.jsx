@@ -28,7 +28,7 @@ const Footer = () => {
             {/* First Location */}
             <div className="flex flex-col space-y-2">
               <div className="flex items-start">
-                <MdLocationOn className="mr-2 text-black" size={24} />
+                <MdLocationOn className="mr-2 text-black" size={50} />
                 <div>
                   <span className="font-semibold">Headquarters:</span> 460 Mike
                   Akhigbe Way, Jabi, Abuja, Nigeria.
@@ -144,15 +144,9 @@ const Footer = () => {
                 </div>
               </Link>
             </li>
+          
             <li>
-              <Link href="/services/support" passHref>
-                <div className="hover:text-gray-900 cursor-pointer">
-                  Book store
-                </div>
-              </Link>
-            </li>
-            <li>
-              <Link href="/services/support" passHref>
+              <Link href="https://wa.me/2347086026673" target="_blank" passHref>
                 <div className="hover:text-gray-900 cursor-pointer">
                   Web Development
                 </div>
