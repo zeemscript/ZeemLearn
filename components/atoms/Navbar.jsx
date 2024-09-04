@@ -52,7 +52,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="h-16 p-2 sm:p-4 flex justify-between items-center bg-blue-400 w-full  fixed z-10">
+    <nav className="h-16 p-2 sm:p-4 flex justify-between items-center bg-gray-900 w-full  fixed z-10">
       <Link href="/" className="flex items-center">
         <Image
           alt="zeemlearn Logo"
@@ -67,45 +67,45 @@ const Navbar = () => {
       <div className="hidden md:flex md:gap-6">
         <Link
           href="/"
-          className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+          className="text-lg font-light hover:font-normal text-white hover:text-blue-500 font-serif transition-colors duration-200"
         >
           Home
         </Link>
         <Link
           href={"#aboutus"}
-          className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+          className="text-lg font-light hover:font-normal text-white hover:text-blue-500 font-serif transition-colors duration-200"
         >
           About
         </Link>
         <Link
           href="#courses"
-          className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+          className="text-lg font-light hover:font-normal text-white hover:text-blue-500 font-serif transition-colors duration-200"
         >
           Courses
         </Link>
         {user && user.uid === "pHCSnMCuHgZvOJev1oGHvovlhXJ3" && (
           <Link
             href="/admin"
-            className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+            className="text-lg font-light hover:font-normal text-white hover:text-blue-500 font-serif transition-colors duration-200"
           >
             Admin Dashboard
           </Link>
         )}
         <Link
           href="#vision"
-          className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+          className="text-lg font-light hover:font-normal text-white hover:text-blue-500 font-serif transition-colors duration-200"
         >
           Our Vision
         </Link>
         <Link
           href="/blogs"
-          className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+          className="text-lg font-light hover:font-normal text-white hover:text-blue-500 font-serif transition-colors duration-200"
         >
           Blog
         </Link>
         <Link
           href="#contact"
-          className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+          className="text-lg font-light hover:font-normal text-white hover:text-blue-500 font-serif transition-colors duration-200"
         >
           Contact Us
         </Link>
@@ -126,7 +126,7 @@ const Navbar = () => {
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Welcome to  ZeemLearn.</DialogTitle>
+              <DialogTitle>Welcome to ZeemLearn.</DialogTitle>
               <DialogDescription>
                 {isLogin ? (
                   <Login onSuccess={handleClose} setIsOpen={setIsOpen} />
@@ -207,7 +207,7 @@ const Navbar = () => {
               </Link>
               {user ? (
                 <Button
-                  className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-4"
+                  className="bg-blue-500 hover:bg-blue-600 text-blackfont-bold py-2 px-4 rounded mt-4"
                   onClick={handleLogout}
                 >
                   <LogOut className="mr-2 h-4 w-4" /> Logout
@@ -219,7 +219,7 @@ const Navbar = () => {
                   </DialogTrigger>
                   <DialogContent>
                     <DialogHeader>
-                      <DialogTitle>Welcome to  ZeemLearn.</DialogTitle>
+                      <DialogTitle>Welcome to ZeemLearn.</DialogTitle>
                       <DialogDescription>
                         {isLogin ? (
                           <Login

@@ -6,7 +6,7 @@ export default function Info({ id }) {
   return (
     <section
       id={id}
-      className="flex flex-col items-center justify-center px-6 py-12 bg-blue-500 text-white"
+      className="flex flex-col items-center justify-center px-6 py-12 bg-gray-900 text-white"
     >
       <div className="text-center mb-8">
         <span className="text-4xl sm:text-5xl font-serif font-thin">

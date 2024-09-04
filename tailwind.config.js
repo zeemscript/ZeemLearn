@@ -18,7 +18,7 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        "hero": "url('/images/zeemlearnlogo.png')",
+        "hero": "url('/images/bg-image.jpg')",
       },
       colors: {
         border: "hsl(var(--border))",

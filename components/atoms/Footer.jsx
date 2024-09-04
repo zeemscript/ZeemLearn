@@ -13,7 +13,7 @@ import { MdLocationOn } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-500 text-blue-100 py-10 px-6">
+    <footer className="bg-gray-900 text-blue-100 py-10 px-6">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8">
         {/* Company Info */}
         <div>
@@ -52,38 +52,38 @@ const Footer = () => {
           <ul className="space-y-2">
             <li>
               <Link href="/" passHref>
-                <div className="hover:text-gray-900 cursor-pointer">Home</div>
+                <div className="hover:text-blue-500 cursor-pointer">Home</div>
               </Link>
             </li>
             <li>
               <Link href="/about" passHref>
-                <div className="hover:text-gray-900 cursor-pointer">
+                <div className="hover:text-blue-500 cursor-pointer">
                   About Us
                 </div>
               </Link>
             </li>
             <li>
               <Link href="/services" passHref>
-                <div className="hover:text-gray-900 cursor-pointer">
+                <div className="hover:text-blue-500 cursor-pointer">
                   Services
                 </div>
               </Link>
             </li>
             <li>
               <Link href="/contact" passHref>
-                <div className="hover:text-gray-900 cursor-pointer">
+                <div className="hover:text-blue-500 cursor-pointer">
                   Contact
                 </div>
               </Link>
             </li>
             <li>
               <Link href="/blog" passHref>
-                <div className="hover:text-gray-900 cursor-pointer">Blog</div>
+                <div className="hover:text-blue-500 cursor-pointer">Blog</div>
               </Link>
             </li>
             <li>
               <Link href="/Termofuse" passHref>
-                <div className="hover:text-gray-900 cursor-pointer">
+                <div className="hover:text-blue-500 cursor-pointer">
                   Term of use
                 </div>
               </Link>
@@ -99,36 +99,36 @@ const Footer = () => {
           <ul className="space-y-2">
             <li>
               <Link href="/services/web-development" passHref>
-                <div className="hover:text-gray-900 cursor-pointer">
+                <div className="hover:text-blue-500 cursor-pointer">
                   Research
                 </div>
               </Link>
             </li>
             <li>
               <Link href="/services/marketing" passHref>
-                <div className="hover:text-gray-900 cursor-pointer">
+                <div className="hover:text-blue-500 cursor-pointer">
                   Online courses
                 </div>
               </Link>
             </li>
             <li>
               <Link href="/services/consulting" passHref>
-                <div className="hover:text-gray-900 cursor-pointer">
+                <div className="hover:text-blue-500 cursor-pointer">
                   Live classes
                 </div>
               </Link>
             </li>
             <li>
               <Link href="/services/support" passHref>
-                <div className="hover:text-gray-900 cursor-pointer">
+                <div className="hover:text-blue-500 cursor-pointer">
                   Educational consultation
                 </div>
               </Link>
             </li>
-          
+
             <li>
               <Link href="https://wa.me/2347086026673" target="_blank" passHref>
-                <div className="hover:text-gray-900 cursor-pointer">
+                <div className="hover:text-blue-500 cursor-pointer">
                   Web Development
                 </div>
               </Link>
@@ -167,39 +167,39 @@ const Footer = () => {
           {/* Social Media Icons */}
           <div className="flex space-x-6 mb-6 md:mb-0">
             <Link href="https://www.facebook.com/teachleadx" passHref>
-              <div className="hover:text-gray-900 cursor-pointer">
+              <div className="hover:text-blue-500 cursor-pointer">
                 <FaFacebookF size={25} />
               </div>
             </Link>
             <Link href="https://x.com/teachleadx" passHref>
-              <div className="hover:text-gray-900 cursor-pointer">
+              <div className="hover:text-blue-500 cursor-pointer">
                 <FaTwitter size={25} />
               </div>
             </Link>
             <Link href="https://www.instagram.com/teachleadx/" passHref>
-              <div className="hover:text-gray-900 cursor-pointer">
+              <div className="hover:text-blue-500 cursor-pointer">
                 <FaInstagram size={25} />
               </div>
             </Link>
             <Link href="https://www.linkedin.com/company/teachleadx/" passHref>
-              <div className="hover:text-gray-900 cursor-pointer">
+              <div className="hover:text-blue-500 cursor-pointer">
                 <FaLinkedinIn size={25} />
               </div>
             </Link>
             <Link href="https://discord.com/channels/teachleadx" passHref>
-              <div className="hover:text-gray-900 cursor-pointer">
+              <div className="hover:text-blue-500 cursor-pointer">
                 <FaDiscord size={25} />
               </div>
             </Link>
             <Link href="https://youtube.com/@teachleadx" passHref>
-              <div className="hover:text-gray-900 cursor-pointer">
+              <div className="hover:text-blue-500 cursor-pointer">
                 <FaYoutube size={25} />
               </div>
             </Link>
           </div>
 
           {/* Copyright */}
-          <div className="text-md text-black font-serif">
+          <div className="text-md text-white font-serif">
             © {new Date().getFullYear()}{" "}
             <span className="text-md font-bold text-[#113A69] mb-4 font-serif px-1">
               ZeemLearn
