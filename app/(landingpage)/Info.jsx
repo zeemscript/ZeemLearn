@@ -27,7 +27,7 @@ export default function Info({ id }) {
       <div className="flex flex-col md:flex-row justify-center items-center max-w-5xl mx-auto gap-8">
         <div className="w-full md:w-1/2 mb-8 md:mb-0">
           <Image
-            src={"/images/tlxlandimage.jpg"}
+            src={"/images/bg-image.jpg"}
             alt="Our Team"
             width={600}
             height={400}

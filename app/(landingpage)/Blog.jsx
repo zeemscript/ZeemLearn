@@ -11,7 +11,7 @@ const Blog = () => {
       title: "How to Build a Successful Career in Tech",
       description:
         "Explore the essential steps to create a thriving career in the technology industrylore the essential steps to create a thriving career in the technology industrylore the essential steps to create a thriving career in the technology industrylore the essential steps to create a thriving career in the technology industrylore the essential steps to create a thriving career in the technology industrylore the essential steps to create a thriving career in the technology industrylore the essential steps to create a thriving career in the technology industrylore the essential steps to create a thriving career in the technology industry",
-      imageUrl: "/images/tlxlandimage.jpg",
+      imageUrl: "/images/bg-image.jpg",
       date: "August 22, 2024",
     },
     {
@@ -19,7 +19,7 @@ const Blog = () => {
       title: "Top 10 Programming Languages to Learn in 2024",
       description:
         "A comprehensive guide to the most popular programming languages you should consider learning.",
-      imageUrl: "/images/tlxlandimage.jpg",
+      imageUrl: "/images/bg-image.jpg",
       date: "August 15, 2024",
     },
     {
@@ -27,7 +27,7 @@ const Blog = () => {
       title: "Mastering Web Development: Tips and Tricks",
       description:
         "Advanced techniques and tips for mastering web development in 2024.",
-      imageUrl: "/images/tlxlandimage.jpg",
+      imageUrl: "/images/bg-image.jpg",
       date: "August 10, 2024",
     },
     {
@@ -35,7 +35,7 @@ const Blog = () => {
       title: "Designing User-Friendly Websites: Best Practices",
       description:
         "Learn how to design websites that are both visually appealing and easy to use.",
-      imageUrl: "/images/tlxlandimage.jpg",
+      imageUrl: "/images/bg-image.jpg",
       date: "August 5, 2024",
     },
   ];

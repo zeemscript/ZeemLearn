@@ -58,7 +58,7 @@ export default function Course() {
             >
               <CardHeader className="p-0">
                 <Image
-                  src="/images/tlxlandimage.jpg"
+                  src="/images/bg-image.jpg"
                   alt={course.title}
                   width={400}
                   height={250}

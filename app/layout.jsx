@@ -8,7 +8,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "ZeemLearn",
-  description: "Empowering Education, Inspiring Innovation.",
+  description: [
+    "Empowering Education, Inspiring Innovation.",
+    "ZeemLearn connects learners with the best courses from top global platforms. Discover flexible, high-quality education tailored to your needs.",
+  ],
 };
 
 export default function RootLayout({ children }) {
@@ -17,7 +20,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="icon" href="/images/layout.png" type="image/x-icon" />
       </head>
-      <body className={`${inter.className} "flex h-screen"`}>
+      <body className={`${inter.className} `}>
         <AuthProvider>
           <NextTopLoader color="#00BFFF" showSpinner={false} />
           <main className="bg-white">

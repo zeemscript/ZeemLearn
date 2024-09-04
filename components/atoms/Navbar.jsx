@@ -83,14 +83,7 @@ const Navbar = () => {
         >
           Courses
         </Link>
-        {user && user.uid === "pHCSnMCuHgZvOJev1oGHvovlhXJ3" && (
-          <Link
-            href="/admin"
-            className="text-lg font-light hover:font-normal text-white hover:text-blue-500 font-serif transition-colors duration-200"
-          >
-            Admin Dashboard
-          </Link>
-        )}
+     
         <Link
           href="#vision"
           className="text-lg font-light hover:font-normal text-white hover:text-blue-500 font-serif transition-colors duration-200"
@@ -173,14 +166,7 @@ const Navbar = () => {
               >
                 About
               </Link>
-              {user && user.uid === "pHCSnMCuHgZvOJev1oGHvovlhXJ3" && (
-                <Link
-                  href="/admin"
-                  className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
-                >
-                  Admin Dashboard
-                </Link>
-              )}
+             
               <Link
                 href="#courses"
                 className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"

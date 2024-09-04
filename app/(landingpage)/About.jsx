@@ -10,29 +10,33 @@ const About = ({id}) => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="md:w-1/2 text-white text-lg font-serif  pt-1 sm:pt-4">
             <p className="mb-4">
-               At ZeemLearn, we are committed to empowering learners
-              worldwide through accessible, flexible, and high-quality
-              education. Founded by Dr. Kalu Thankgod Ugochukwu, ZeemLearn
-              serves as a global platform for open online courses, designed to
-              meet the diverse needs of students, professionals, and lifelong
-              learners. Our mission is to bridge the educational gap by
-              providing comprehensive, innovative, and tailored learning
-              experiences that foster personal and professional growth.
+              At ZeemLearn, we specialize in helping learners find the best
+              courses across top global learning platforms. Our mission is to
+              simplify the process of discovering high-quality, relevant
+              educational programs that meet the diverse needs of students,
+              professionals, and lifelong learners. Whether you&pos;re seeking
+              to enhance your career, develop new skills, or pursue personal
+              growth, ZeemLearn connects you to the right course at the right
+              time.
             </p>
             <p>
-              We believe in the transformative power of education and strive to
-              create opportunities for learners to excel in their chosen fields.
-              Our courses are developed by industry experts and seasoned
-              educators, ensuring that each program is relevant, engaging, and
-              aligned with the latest trends and advancements.
+              ZeemLearn is committed to making education more accessible,
+              flexible, and tailored to your goals. We partner with leading
+              online platforms to bring you a curated selection of courses
+              developed by industry experts and world-class educators, ensuring
+              that you receive up-to-date, practical knowledge aligned with the
+              latest industry trends.
             </p>
             <p className="mb-4">
-              Whether you&amp;re looking to advance your career, acquire new
-              skills, or explore new interests, ZeemLearn offers a dynamic
-              learning environment that adapts to your pace and schedule. Join
-              us at ZeemLearn and take the next step in your educational
-              journey with a community that values excellence, inclusivity, and
-              lifelong learning.
+              Our user-friendly platform allows you to explore courses across
+              multiple subjects, compare options, and choose the best fit for
+              your schedule and learning style. We believe that education is a
+              powerful tool for transformation, and we strive to empower
+              learners by offering personalized recommendations and guidance.
+              <br />
+              Join us at ZeemLearn and discover a smarter way to learn. Whether
+              you&apos;re advancing your career or exploring new passions, we
+              help you find the perfect course to achieve your goals.
             </p>
           </div>
           <div className="md:w-1/2 mt-8 md:mt-0 md:pl-12">

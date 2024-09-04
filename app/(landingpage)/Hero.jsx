@@ -11,6 +11,7 @@ const Hero = () => {
         <br />
         <span className="py-4">
           Empowering Education, Inspiring Innovation.
+            <marquee behavior="scroll" direction="left">rejksk luiehsirufh hb sdfghkblgfhsdbhgsdfbhgfdsbgdfshbsdfgjkhbhjsfgdbhkjsdfgbhjbfgdbjbgdfjbhjfgdsbhjhkfgdbdfgs</marquee>
         </span>
       </span>
       <div>
