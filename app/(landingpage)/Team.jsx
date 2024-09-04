@@ -14,7 +14,7 @@ const teamMembers = [
   {
     name: "Michael Brown",
     role: "Lead Designer",
-    image: "/images/azeem.jpg",
+    image: "/images/user1.jpg",
   },
   {
     name: "Emily Davis",
