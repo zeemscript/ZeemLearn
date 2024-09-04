@@ -18,7 +18,7 @@ const Footer = () => {
         {/* Company Info */}
         <div>
           <h2 className="text-3xl font-bold text-[#113A69] mb-4 font-serif">
-            TeachLeadX
+            ZeemLearn
           </h2>
           <p className="mb-4">
             We provide the best services to help your business grow. Join us to
@@ -36,32 +36,13 @@ const Footer = () => {
               </div>
               <div className="flex items-start">
                 <FiPhone className="mr-2 text-black" size={20} />
-                +234 (0) 802-205-0078
+                +234 (0) 906-516-5097
               </div>
               <div className="flex items-start">
                 <FiMail className="mr-2 text-black" size={20} />
-                admin@teachleadx.com
+                admin@tzeemlearn.com
               </div>
             </div>
-
-            {/* Second Location */}
-            {/* <div className="flex flex-col space-y-2 mt-6">
-              <div className="flex items-start">
-                <MdLocationOn className="mr-2 text-black" size={24} />
-                <div>
-                  <span className="font-semibold">International Office:</span>{" "}
-                  355 N Richardson Ave, Roswell, NM, USA.
-                </div>
-              </div>
-              <div className="flex items-start">
-                <FiPhone className="mr-2 text-black" size={20} />
-                +1 (575) 252-7750
-              </div>
-              <div className="flex items-start">
-                <FiMail className="mr-2 text-black" size={20} />
-                admin@teachleadx.com
-              </div>
-            </div> */}
           </div>
         </div>
 
@@ -221,7 +202,7 @@ const Footer = () => {
           <div className="text-md text-black font-serif">
             © {new Date().getFullYear()}{" "}
             <span className="text-md font-bold text-[#113A69] mb-4 font-serif px-1">
-              TeachLeadX
+              ZeemLearn
             </span>{" "}
             All rights reserved.
           </div>

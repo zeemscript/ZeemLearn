@@ -10,9 +10,9 @@ const About = ({id}) => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="md:w-1/2 text-gray-700 text-lg font-serif dark:text-gray-300 pt-1 sm:pt-4">
             <p className="mb-4">
-               At TeachLeadX, we are committed to empowering learners
+               At ZeemLearn, we are committed to empowering learners
               worldwide through accessible, flexible, and high-quality
-              education. Founded by Dr. Kalu Thankgod Ugochukwu, TeachLeadX
+              education. Founded by Dr. Kalu Thankgod Ugochukwu, ZeemLearn
               serves as a global platform for open online courses, designed to
               meet the diverse needs of students, professionals, and lifelong
               learners. Our mission is to bridge the educational gap by
@@ -28,9 +28,9 @@ const About = ({id}) => {
             </p>
             <p className="mb-4">
               Whether you&amp;re looking to advance your career, acquire new
-              skills, or explore new interests, TeachLeadX offers a dynamic
+              skills, or explore new interests, ZeemLearn offers a dynamic
               learning environment that adapts to your pace and schedule. Join
-              us at TeachLeadX and take the next step in your educational
+              us at ZeemLearn and take the next step in your educational
               journey with a community that values excellence, inclusivity, and
               lifelong learning.
             </p>

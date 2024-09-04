@@ -11,7 +11,7 @@ const TermsOfUse =  () => {
         <section className="mb-8">
           <h2 className="text-2xl font-semibold mb-4">Introduction</h2>
           <p className="mb-4">
-            TeachLeadx’s mission is to make learning convenient, flexible, and
+             ZeemLearn’s mission is to make learning convenient, flexible, and
             accessible. We create space for anyone anywhere to create and
             publish educational courses (instructors) and to enroll in these
             educational courses to learn (students). We consider our marketplace
@@ -20,15 +20,15 @@ const TermsOfUse =  () => {
             you, and our student and instructor community.
           </p>
           <p className="mb-4">
-            These Terms apply to all your activities on the TeachLeadx website
-            (“Services”). If you publish a course on the TeachLeadx platform,
+            These Terms apply to all your activities on the  ZeemLearn website
+            (“Services”). If you publish a course on the  ZeemLearn platform,
             you must also agree to the Instructors Terms. We also provide
             details regarding our processing of personal data of our students
             and instructors in our Privacy Policy.
           </p>
           <p className="mb-4">
             If you live in Nigeria, by agreeing to these Terms, you agree to
-            resolve disputes with TeachLeadx through binding arbitration (with
+            resolve disputes with  ZeemLearn through binding arbitration (with
             very limited exceptions, not in court), and you waive certain rights
             to participate in class actions, as detailed in the Dispute
             Resolution section.
@@ -43,7 +43,7 @@ const TermsOfUse =  () => {
             associated with your account. If you suspect someone else is using
             your account, let us know by contacting our Support Team. You must
             have reached the age of consent for online services in your country
-            to use TeachLeadx.
+            to use  ZeemLearn.
           </p>
           <p className="mb-4">
             You need an account for most activities on our platform, including
@@ -64,7 +64,7 @@ const TermsOfUse =  () => {
           <p className="mb-4">
             You may not share your account login credentials with anyone else.
             You are responsible for what happens with your account and
-            TeachLeadx will not intervene in disputes between students or
+             ZeemLearn will not intervene in disputes between students or
             instructors who have shared account login credentials. You must
             notify us immediately upon learning that someone else may be using
             your account without your permission (or if you suspect any other
@@ -74,18 +74,18 @@ const TermsOfUse =  () => {
           </p>
           <p className="mb-4">
             Students and instructors must be at least 18 years of age to create
-            an account on TeachLeadx and use the Services. If you are younger
+            an account on  ZeemLearn and use the Services. If you are younger
             than 18 but above the required age for consent to use online
             services where you live (for example, 13 in the US or 16 in
             Ireland), you may not set up an account, but we encourage you to
             invite a parent or guardian to open an account and help you enroll
             in courses that are appropriate for you. If you are below this age
-            of consent to use online services, you may not create a TeachLeadx
+            of consent to use online services, you may not create a  ZeemLearn
             account. If we discover that you have created an account that
             violates these rules, we will terminate your account. Under our
             Instructors Terms, you may be requested to verify your identity
             before you are authorized to submit a course for publication on
-            TeachLeadx.
+             ZeemLearn.
           </p>
         </section>
 

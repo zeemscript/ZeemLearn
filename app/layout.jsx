@@ -9,7 +9,7 @@ import ToTop from "@/components/atoms/ToTop";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "TeachLeadX",
+  title: "ZeemLearn",
   description: "Empowering Education, Inspiring Innovation.",
 };
 

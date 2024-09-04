@@ -11,7 +11,7 @@ const ContactUs = ({id}) => {
         {/* Image Section */}
         <div className="flex justify-center">
           <Image
-            src="/images/work.png"
+            src="/images/zeemlearnlogo.png"
             alt="Contact Us"
             width={400}
             height={400}

@@ -29,7 +29,7 @@ const Team = () => {
       <div className="text-center mb-10">
         <h2 className="text-3xl font-bold text-[#113A69] mb-4">Our Team</h2>
         <p className="text-lg text-gray-600">
-          Meet the people who make TeachLeadX possible
+          Meet the people who make ZeemLearn possible
         </p>
       </div>
       <div className="flex flex-wrap justify-center md:justify-between">

@@ -20,7 +20,7 @@ const Whyus = () => {
             <span className="text-2xl sm:text-4xl my-2 font-serif">
               Why Choose
               <span className="text-md font-bold text-[#113A69] mb-4 px-1">
-                TeachLeadX?
+                ZeemLearn?
               </span>
             </span>
             <ul className="text-lg my-4 space-y-2">
@@ -54,13 +54,13 @@ const Whyus = () => {
                 <br />
                 <span className="font-normal px-4">
                   Whether you&apos;re looking to upskill, reskill, or simply
-                  explore a new passion, TeachLeadX offers a wide range of
+                  explore a new passion, ZeemLearn offers a wide range of
                   courses designed to help you succeed.
                 </span>
               </li>
             </ul>
             <p className="text-lg mt-4">
-              With TeachLeadX, the future is in your hands. Ready to begin?
+              With ZeemLearn, the future is in your hands. Ready to begin?
             </p>
             <Button className="mt-6">Explore Courses</Button>
           </div>

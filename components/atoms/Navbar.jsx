@@ -52,11 +52,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="h-16 p-2 sm:p-4 flex justify-between items-center bg-white w-full  fixed z-10">
+    <nav className="h-16 p-2 sm:p-4 flex justify-between items-center bg-blue-400 w-full  fixed z-10">
       <Link href="/" className="flex items-center">
         <Image
-          alt="TLX Logo"
-          src="/images/TLX_logo.png"
+          alt="zeemlearn Logo"
+          src="/images/zeemlearnlogo.png"
           width={100}
           height={40}
           className="object-contain"
@@ -126,7 +126,7 @@ const Navbar = () => {
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Welcome to TeachLeadX.</DialogTitle>
+              <DialogTitle>Welcome to  ZeemLearn.</DialogTitle>
               <DialogDescription>
                 {isLogin ? (
                   <Login onSuccess={handleClose} setIsOpen={setIsOpen} />
@@ -219,7 +219,7 @@ const Navbar = () => {
                   </DialogTrigger>
                   <DialogContent>
                     <DialogHeader>
-                      <DialogTitle>Welcome to TeachLeadX.</DialogTitle>
+                      <DialogTitle>Welcome to  ZeemLearn.</DialogTitle>
                       <DialogDescription>
                         {isLogin ? (
                           <Login

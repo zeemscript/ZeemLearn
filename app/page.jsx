@@ -23,13 +23,13 @@ const Home = () => {
       <Empower />
       <Whyus id={"whyus"} />
       <Info id={"vision"} />
-      {/* <Testimonial /> */}
+      <Testimonial />
       <Team />
-      {/* <Partners /> */}
-      {/* <TrustedBy /> */}
+      <Partners />
+      <TrustedBy />
       <Blog />
       <ContactUs id={"contact"} />
-      {/* <Suscribe /> */}
+      <Suscribe />
     </>
   );
 };
