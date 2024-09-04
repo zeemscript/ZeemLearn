@@ -18,13 +18,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import {
-  LineChart,
-  Package,
-  PanelLeft,
-  Search,
-  Users2,
-} from "lucide-react";
+import { LineChart, Package, PanelLeft, Search, Users2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
@@ -66,7 +60,7 @@ const DashNavbar = () => {
                 Customers
               </Link>
               <Link
-                href="#"
+                href="/dashboard/settings"
                 className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
               >
                 <LineChart className="h-5 w-5" />
@@ -75,25 +69,23 @@ const DashNavbar = () => {
             </nav>
           </SheetContent>
         </Sheet>
-        <Breadcrumb className="hidden md:flex">
-          <BreadcrumbList>
-            <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link href="#">Dashboard</Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbLink asChild>
-                <Link href="#">Products</Link>
-              </BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator />
-            <BreadcrumbItem>
-              <BreadcrumbPage>Edit Product</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+        <div className="hidden md:flex">
+          <Link href="/" className="flex items-center">
+            <Image
+              alt="zeemlearn Logo"
+              src="/images/zeemlearnlogo.png"
+              width={100}
+              height={40}
+              className="object-contain"
+            />
+            <Link
+              href="/"
+              className="text-lg font-light hover:font-normal text-white hover:text-blue-500 font-serif transition-colors duration-200"
+            >
+              Home
+            </Link>
+          </Link>
+        </div>
         <div className="relative ml-auto flex-1 md:grow-0">
           <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
@@ -121,7 +113,9 @@ const DashNavbar = () => {
           <DropdownMenuContent align="end">
             <DropdownMenuLabel>My Account</DropdownMenuLabel>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>Settings</DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href="/dashboard/settings">Settings</Link>{" "}
+            </DropdownMenuItem>
             <DropdownMenuItem>Support</DropdownMenuItem>
             <DropdownMenuSeparator />
             <DropdownMenuItem>Logout</DropdownMenuItem>
