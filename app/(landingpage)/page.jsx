@@ -24,7 +24,7 @@ const Home = () => {
         <main>
           <Hero />
           <About id="aboutus" />
-          <Courses id={"courses"} />
+          {/* <Courses id={"courses"} /> */}
           <Empower />
           <Whyus id={"whyus"} />
           <Info id={"vision"} />

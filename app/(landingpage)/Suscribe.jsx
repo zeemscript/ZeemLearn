@@ -11,7 +11,7 @@ const Suscribe = () => {
           Get the latest updates and offers.
         </p>
         <form className="w-full max-w-md" noValidate={true}>
-          <div className="flex items-center border-b border-blue-700 py-2">
+          <div className="flex items-center border-b border-gray-900 py-2">
             <input
               type="email"
               name="email"
@@ -22,7 +22,7 @@ const Suscribe = () => {
             />
             <button
               type="submit"
-              className="flex-shrink-0 bg-blue-700-700 hover:bg-blue-600 border-blue-700 hover:border-blue-600 text-sm border-2 text-black py-1 px-2"
+              className="flex-shrink-0  hover:bg-gray-900 hover:text-white border-gray-700 hover:border-gray-600 text-sm border-2 text-black py-1 px-2"
             >
               Subscribe
             </button>
