@@ -36,15 +36,15 @@ export default function Settings() {
             <Link href="#" onClick={() => handleTabClick("security")}>
               Security
             </Link>
-            <Link href="#" onClick={() => handleTabClick("integrations")}>
+            {/* <Link href="#" onClick={() => handleTabClick("integrations")}>
               Integrations
-            </Link>
+            </Link> */}
             <Link href="#" onClick={() => handleTabClick("support")}>
               Support
             </Link>
-            <Link href="#" onClick={() => handleTabClick("organizations")}>
+            {/* <Link href="#" onClick={() => handleTabClick("organizations")}>
               Organizations
-            </Link>
+            </Link> */}
             <Link href="#" onClick={() => handleTabClick("advanced")}>
               Advanced
             </Link>
