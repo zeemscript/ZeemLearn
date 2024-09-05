@@ -9,7 +9,8 @@ import { toast } from "sonner";
 import { Key, Mail } from "lucide-react";
 import { EyeIcon } from "lucide-react";
 import { EyeOffIcon } from "lucide-react";
-
+import { FcGoogle } from "react-icons/fc";
+import { Separator } from "@/components/ui/separator";
 const SignUp = ({ onSuccess, setIsOpen }) => {
   const router = useRouter();
   const [showPswrd, setShowPswrd] = useState(false);
@@ -110,12 +111,19 @@ const SignUp = ({ onSuccess, setIsOpen }) => {
           onChange={handleChange}
           icon={<Key className="h-4 w-4" />}
         />
-        <Button type="submit" variant="outline" className="my-4">
-          {submit ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}{" "}
+        <Button type="submit" className="mt-4 w-full">
+          {submit ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
           SignUp
         </Button>
       </form>
-      <Button onClick={handleGoogleLogin}>Continue with Google</Button>
+      <div className="flex justify-center items-center space-x-2">
+        <Separator className="w-1/2" />
+        <span>or</span>
+        <Separator className="w-1/2" />
+      </div>
+      <Button onClick={handleGoogleLogin} className="w-full space-x-2 mt-2">
+        <FcGoogle size={25} /> Continue with Google
+      </Button>
     </div>
   );
 };

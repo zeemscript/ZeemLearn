@@ -9,7 +9,8 @@ import { Loader2 } from "lucide-react";
 import { Key, Mail } from "lucide-react";
 import { EyeIcon } from "lucide-react";
 import { EyeOffIcon } from "lucide-react";
-
+import { Separator } from "@/components/ui/separator";
+import { FcGoogle } from "react-icons/fc";
 const Login = ({ onSuccess, setIsOpen }) => {
   const router = useRouter();
   const [submit, setSubmit] = useState(false);
@@ -80,12 +81,19 @@ const Login = ({ onSuccess, setIsOpen }) => {
             </>
           }
         />
-        <Button type="submit" variant="outline" className="my-4">
+        <Button type="submit" variant="outline" className="my-4 w-full">
           {submit ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
           Login
         </Button>
       </form>
-      <Button onClick={handleGoogleLogin}>Continue with Google</Button>
+      <div className="flex justify-center items-center space-x-2">
+        <Separator className="w-1/2" />
+        <span>or</span>
+        <Separator className="w-1/2" />
+      </div>
+      <Button onClick={handleGoogleLogin} className="w-full space-x-2 mt-2">
+        <FcGoogle size={25} /> Continue with Google
+      </Button>
     </div>
   );
 };
