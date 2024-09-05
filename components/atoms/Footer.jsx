@@ -30,8 +30,8 @@ const Footer = () => {
               <div className="flex items-start">
                 <MdLocationOn className="mr-2 text-black" size={50} />
                 <div>
-                  <span className="font-semibold">Headquarters:</span> 460 Mike
-                  Akhigbe Way, Jabi, Abuja, Nigeria.
+                  <span className="font-semibold">Headquarters:</span> 5 AlJANAT
+                Ilorin, KWara, Nigeria.
                 </div>
               </div>
               <div className="flex items-start">

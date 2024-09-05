@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 const Empower = ({ id }) => {
   return (
     <div id={id}>
-      <div className="bg-white mt-8 mx-6 sm:mx-10 my-4 text-lg font-light text-gray-700 leading-relaxed">
+      <div className="bg-gray-900 mt-8 mx-6 sm:mx-10 my-4 text-lg font-light text-gray-700 leading-relaxed">
         <span className="text-4xl sm:text-5xl font-serif font-thin">
           Empower Yourself.
         </span>

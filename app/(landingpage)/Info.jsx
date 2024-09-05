@@ -8,7 +8,7 @@ export default function Info({ id }) {
       id={id}
       className="flex flex-col items-center justify-center px-6 py-12 bg-gray-900 text-white"
     >
-      <div className="text-center mb-8">
+      {/* <div className="text-center mb-8">
         <span className="text-4xl sm:text-5xl font-serif font-thin">
           Our Vision
         </span>
@@ -23,7 +23,7 @@ export default function Info({ id }) {
           world where quality education is accessible to everyone, irrespective
           of geographical, financial, or societal barriers.
         </p>
-      </div>
+      </div> */}
       <div className="flex flex-col md:flex-row justify-center items-center max-w-5xl mx-auto gap-8">
         <div className="w-full md:w-1/2 mb-8 md:mb-0">
           <Image

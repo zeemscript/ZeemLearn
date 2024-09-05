@@ -60,7 +60,9 @@ const Whyus = () => {
               </li>
             </ul>
             <p className="text-lg mt-4">
-              With ZeemLearn, the future is in your hands. Ready to begin?
+              Ready to start your tech career? Browse the top tech courses from
+              leading platforms on ZeemLearn and get started on your journey to
+              success today!
             </p>
             <Button className="mt-6">Explore Courses</Button>
           </div>

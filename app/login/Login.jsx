@@ -11,7 +11,10 @@ import { EyeIcon } from "lucide-react";
 import { EyeOffIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 import { FcGoogle } from "react-icons/fc";
+
+
 const Login = ({ onSuccess, setIsOpen }) => {
+  
   const router = useRouter();
   const [submit, setSubmit] = useState(false);
   const [email, setEmail] = useState("");

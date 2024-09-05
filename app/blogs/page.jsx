@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { ArrowBigLeft } from "lucide-react";
+import { ArrowLeftIcon } from "lucide-react";
 const posts = [
   {
     id: "1",
@@ -42,7 +43,11 @@ const Blog = () => {
   return (
     <section className="px-4 md:px-10 py-16 bg-gray-900 text-gray-900">
       <Link href="/">
-        <ArrowBigLeft size={40} className="text-white" />
+        <ArrowLeftIcon
+          size={40}
+          className="text-white hover:text-gray-300 w-10"
+        />
+       
       </Link>
 
       <div className="max-w-screen-lg mx-auto">
