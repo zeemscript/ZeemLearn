@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
-import { login } from "@/lib/auth";
+import { login, loginWithGoogle } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { Key, Mail } from "lucide-react";
@@ -36,6 +36,17 @@ const Login = ({ onSuccess, setIsOpen }) => {
       setSubmit(false);
     }
   };
+
+  const handleGoogleLogin = async () => {
+    try {
+      await loginWithGoogle();
+      toast.success("User logged in with Google successfully");
+      router.push("/dashboard");
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
+
 
   const handleShowPassword = () => setShowPswrd(true);
   const handleClosePassword = () => setShowPswrd(false);
@@ -74,6 +85,7 @@ const Login = ({ onSuccess, setIsOpen }) => {
           Login
         </Button>
       </form>
+      <Button onClick={handleGoogleLogin}>Continue with Google</Button>
     </div>
   );
 };

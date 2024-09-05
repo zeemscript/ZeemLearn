@@ -1,7 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
-import { register } from "@/lib/auth";
+import { register, loginWithGoogle } from "@/lib/auth";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
@@ -52,6 +52,17 @@ const SignUp = ({ onSuccess, setIsOpen }) => {
       setSubmit(false);
     }
   };
+
+ const handleGoogleLogin = async () => {
+   try {
+     await loginWithGoogle();
+     toast.success("User logged in with Google successfully");
+     router.push("/dashboard");
+   } catch (err) {
+     toast.error(err.message);
+   }
+ };
+
 
   const handleShowPassword = () => setShowPswrd(true);
   const handleClosePassword = () => setShowPswrd(false);
@@ -104,6 +115,7 @@ const SignUp = ({ onSuccess, setIsOpen }) => {
           SignUp
         </Button>
       </form>
+      <Button onClick={handleGoogleLogin}>Continue with Google</Button>
     </div>
   );
 };
