@@ -81,7 +81,7 @@ const Login = ({ onSuccess, setIsOpen }) => {
             </>
           }
         />
-        <Button type="submit" variant="outline" className="my-4 w-full">
+        <Button type="submit" className="my-4 w-full">
           {submit ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
           Login
         </Button>
@@ -92,7 +92,7 @@ const Login = ({ onSuccess, setIsOpen }) => {
         <Separator className="w-1/2" />
       </div>
       <Button onClick={handleGoogleLogin} className="w-full space-x-2 mt-2">
-        <FcGoogle size={25} /> Continue with Google
+        <FcGoogle size={25} className="mr-6"/> Continue with Google
       </Button>
     </div>
   );

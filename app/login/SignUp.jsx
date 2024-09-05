@@ -122,7 +122,7 @@ const SignUp = ({ onSuccess, setIsOpen }) => {
         <Separator className="w-1/2" />
       </div>
       <Button onClick={handleGoogleLogin} className="w-full space-x-2 mt-2">
-        <FcGoogle size={25} /> Continue with Google
+        <FcGoogle size={25} className="mr-6" /> Continue with Google
       </Button>
     </div>
   );

@@ -25,6 +25,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
+  DialogFooter,
 } from "@/components/ui/dialog";
 
 const Navbar = () => {
@@ -83,7 +84,7 @@ const Navbar = () => {
         >
           Courses
         </Link>
-     
+
         <Link
           href="#vision"
           className="text-lg font-light hover:font-normal text-white hover:text-blue-500 font-serif transition-colors duration-200"
@@ -126,17 +127,19 @@ const Navbar = () => {
                 ) : (
                   <SignUp onSuccess={handleClose} setIsOpen={setIsOpen} />
                 )}
-                <Button
-                  className="text-gray-600 dark:text-gray-400 dark:hover:text-cyan-300"
-                  onClick={handleToggleForm}
-                  variant="link"
-                >
-                  {isLogin
-                    ? "Don't have an account? Signup"
-                    : "Already have an account? Login"}
-                </Button>
               </DialogDescription>
             </DialogHeader>
+            <DialogFooter>
+              <Button
+                className="text-gray-600 dark:text-gray-400 dark:hover:text-cyan-300"
+                onClick={handleToggleForm}
+                variant="link"
+              >
+                {isLogin
+                  ? "Don't have an account? Signup"
+                  : "Already have an account? Login"}
+              </Button>
+            </DialogFooter>
           </DialogContent>
         </Dialog>
       )}
@@ -166,7 +169,7 @@ const Navbar = () => {
               >
                 About
               </Link>
-             
+
               <Link
                 href="#courses"
                 className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
