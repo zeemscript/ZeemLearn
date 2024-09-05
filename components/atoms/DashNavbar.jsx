@@ -7,8 +7,18 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-
+import { useAuth } from "@/lib/AuthContext";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  LineChart,
+  House,
+  PanelLeft,
+  Search,
+  LayoutDashboard,
+  LogOut,
+  Settings,
+  CircleHelp,
+} from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,19 +27,18 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { LineChart, Package, PanelLeft, Search, Users2 } from "lucide-react";
-
 
 const DashNavbar = () => {
-      const router = useRouter();
-      const handleLogout = async () => {
-        try {
-          await logout();
-          router.push("/");
-        } catch (error) {
+  const { user } = useAuth();
+  const router = useRouter();
+  const handleLogout = async () => {
+    try {
+      await logout();
+      router.push("/");
+    } catch (error) {
       toast.error("Error during logout:", error);
-        }
-      };
+    }
+  };
 
   return (
     <div>
@@ -54,24 +63,24 @@ const DashNavbar = () => {
               </Link>
 
               <Link
-                href="#"
+                href="/"
                 className="flex items-center gap-4 px-2.5 text-foreground"
               >
-                <Package className="h-5 w-5" />
-                Products
+                <House className="h-5 w-5" />
+                Home
               </Link>
               <Link
-                href="#"
+                href="/dashboard"
                 className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
               >
-                <Users2 className="h-5 w-5" />
-                Customers
+                <LayoutDashboard className="h-5 w-5" />
+                Dashboard
               </Link>
               <Link
                 href="/dashboard/settings"
                 className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
               >
-                <LineChart className="h-5 w-5" />
+                <Settings className="h-5 w-5" />
                 Settings
               </Link>
             </nav>
@@ -86,12 +95,6 @@ const DashNavbar = () => {
               height={40}
               className="object-contain"
             />
-            <Link
-              href="/"
-              className="text-lg font-light hover:font-normal text-white hover:text-blue-500 font-serif transition-colors duration-200"
-            >
-              Home
-            </Link>
           </Link>
         </div>
         <div className="relative ml-auto flex-1 md:grow-0">
@@ -109,24 +112,41 @@ const DashNavbar = () => {
               size="icon"
               className="overflow-hidden rounded-full"
             >
-              <Image
-                src="/images/azeem.jpg"
-                width={36}
-                height={36}
-                alt="Avatar"
-                className="overflow-hidden rounded-full"
-              />
+              {user && user.photoURL ? (
+                <Image
+                  src={user.photoURL}
+                  width={36}
+                  height={36}
+                  alt={user.displayName}
+                  className="overflow-hidden rounded-full"
+                />
+              ) : (
+                <div className="w-8 h-8 rounded-full bg-gray-900" />
+              )}
             </Button>
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuLabel>My Account </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem>
-              <Link href="/dashboard/settings">Settings</Link>
+              <LayoutDashboard size={20} className="mr-2" />
+              <Link href="/dashboard"> Dashboard</Link>
             </DropdownMenuItem>
-            <DropdownMenuItem>Support</DropdownMenuItem>
+            <DropdownMenuItem>
+              <div className="flex">
+                <Settings size={20} className="mr-2" />
+                <Link href="/dashboard/settings">Settings</Link>
+              </div>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <CircleHelp size={20} className="mr-2" />
+              Support
+            </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem onClick={handleLogout}>Logout</DropdownMenuItem>
+            <DropdownMenuItem onClick={handleLogout}>
+              <LogOut size={20} className="mr-2" />
+              Logout
+            </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       </header>

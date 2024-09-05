@@ -5,14 +5,12 @@ import Login from "@/app/login/Login";
 import SignUp from "@/app/login/SignUp";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
-import { toast } from "sonner";
 import { LogOut, Menu } from "lucide-react";
 import { logout } from "@/lib/auth";
 import { useState } from "react";
 import { useAuth } from "@/lib/AuthContext";
 import {
   Sheet,
-  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -52,8 +50,12 @@ const Navbar = () => {
     }
   };
 
+  const closeSheet = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <nav className="h-16 p-2 sm:p-4 flex justify-between items-center bg-gray-900 w-full  fixed z-10">
+    <nav className="h-16 p-2 sm:p-4 flex justify-between items-center bg-gray-900 w-full fixed z-10">
       <Link href="/" className="flex items-center">
         <Image
           alt="zeemlearn Logo"
@@ -84,7 +86,6 @@ const Navbar = () => {
         >
           Courses
         </Link>
-
         <Link
           href="#vision"
           className="text-lg font-light hover:font-normal text-white hover:text-blue-500 font-serif transition-colors duration-200"
@@ -146,9 +147,9 @@ const Navbar = () => {
 
       {/* Mobile Menu Button */}
       <div className="md:hidden">
-        <Sheet>
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
-            <Button variant="outline">
+            <Button variant="outline" onClick={() => setIsOpen(true)}>
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
@@ -160,43 +161,48 @@ const Navbar = () => {
               <Link
                 href="/"
                 className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+                onClick={closeSheet}
               >
                 Home
               </Link>
               <Link
                 href={"#aboutus"}
                 className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+                onClick={closeSheet}
               >
                 About
               </Link>
-
               <Link
                 href="#courses"
                 className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+                onClick={closeSheet}
               >
                 Courses
               </Link>
               <Link
                 href="#vision"
                 className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+                onClick={closeSheet}
               >
                 Our Vision
               </Link>
               <Link
                 href="/blogs"
                 className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+                onClick={closeSheet}
               >
                 Blog
               </Link>
               <Link
                 href="#contact"
                 className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
+                onClick={closeSheet}
               >
                 Contact Us
               </Link>
               {user ? (
                 <Button
-                  className="bg-blue-500 hover:bg-blue-600 text-blackfont-bold py-2 px-4 rounded mt-4"
+                  className="bg-blue-500 hover:bg-blue-600 text-black font-bold py-2 px-4 rounded mt-4"
                   onClick={handleLogout}
                 >
                   <LogOut className="mr-2 h-4 w-4" /> Logout

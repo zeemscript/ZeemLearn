@@ -1,9 +1,13 @@
 import DashNavbar from "@/components/atoms/DashNavbar";
+import RouteProtector from "@/lib/RouteProtector";
+
 export default function Layout({ children }) {
   return (
-    <div>
-      <DashNavbar />
-      <main>{children}</main>
-    </div>
+    <RouteProtector>
+      <div>
+        <DashNavbar />
+        <main>{children}</main>
+      </div>
+    </RouteProtector>
   );
 }
