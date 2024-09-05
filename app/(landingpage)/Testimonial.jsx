@@ -29,6 +29,7 @@ const Testimonial = () => {
         <h2 className="text-3xl font-bold font-serif text-center text-gray-800 mb-8">
           What Our Clients Say
         </h2>
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
             <div
