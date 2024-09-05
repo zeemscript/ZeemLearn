@@ -13,11 +13,11 @@ export const metadata = {
     title: "ZeemLearn - Unlock Your Learning Potential",
     description:
       "Connecting You with the Best Courses Across Top Learning Platforms.",
-    url: "https://zeemlearn.vercel.app", // Your website's full URL
+    url: "https://zeemlearn.vercel.app", 
     type: "website",
     images: [
       {
-        url: "https://zeemlearn.vercel.app/favicon.ico", // Full URL to the image in public folder
+        url: "https://zeemlearn.vercel.app/apple-icon.png", 
         width: 1200,
         height: 630,
         alt: "ZeemLearn Banner",
@@ -29,7 +29,7 @@ export const metadata = {
     title: "ZeemLearn - Unlock Your Learning Potential",
     description:
       "Connecting You with the Best Courses Across Top Learning Platforms.",
-    images: ["https://zeemlearn.vercel.app/favicon.ico"], // Full URL to the image
+    images: ["https://zeemlearn.vercel.app/apple-icon.png"], 
   },
 };
 
