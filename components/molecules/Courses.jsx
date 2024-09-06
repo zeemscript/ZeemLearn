@@ -89,7 +89,7 @@ export default function Course() {
                     rel="noreferrer"
                     className="w-full sm:w-auto"
                   >
-                    <Button>Watch on YouTube</Button>
+                    <Button size="lg" className="w-full">Watch on YouTube</Button>
                   </Link>
                 </CardFooter>
               </Card>
