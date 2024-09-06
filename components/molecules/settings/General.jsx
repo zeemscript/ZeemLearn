@@ -1,4 +1,5 @@
 import React from "react";
+import { useAuth } from "@/lib/AuthContext";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -12,6 +13,7 @@ import {
 } from "@/components/ui/card";
 
 const General = () => {
+    const { user } = useAuth();
   return (
     <div className="grid gap-6">
       {/* User Profile Section */}
@@ -24,8 +26,15 @@ const General = () => {
         </CardHeader>
         <CardContent>
           <form className="flex flex-col gap-4">
-            <Input placeholder="Display Name" />
-            <Input type="email" placeholder="Email Address" />
+            <Input
+              placeholder="Display Name"
+              value={user ? user.displayName : ""}
+            />
+            <Input
+              type="email"
+              placeholder="Email Address"
+              value={user ? user.email : ""}
+            />
           </form>
         </CardContent>
         <CardFooter className="border-t px-6 py-4">
@@ -68,8 +77,6 @@ const General = () => {
           <Button>Save</Button>
         </CardFooter>
       </Card>
-
-     
     </div>
   );
 };

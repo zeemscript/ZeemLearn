@@ -64,21 +64,21 @@ const DashNavbar = () => {
 
               <Link
                 href="/"
-                className="flex items-center gap-4 px-2.5 text-foreground"
+                className="flex items-center gap-4 px-2.5 text-text-gray-400 text-white"
               >
                 <House className="h-5 w-5" />
                 Home
               </Link>
               <Link
                 href="/dashboard"
-                className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-gray-400 text-white"
               >
                 <LayoutDashboard className="h-5 w-5" />
                 Dashboard
               </Link>
               <Link
                 href="/dashboard/settings"
-                className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground"
+                className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-gray-400 text-white"
               >
                 <Settings className="h-5 w-5" />
                 Settings
