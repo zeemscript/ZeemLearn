@@ -121,7 +121,13 @@ const DashNavbar = () => {
                   className="overflow-hidden rounded-full"
                 />
               ) : (
-                <div className="w-8 h-8 rounded-full bg-gray-900" />
+                <Image
+                  src="/images/bg-image.jpg"
+                  width={36}
+                  height={36}
+                  alt="user-image"
+                  className="overflow-hidden rounded-full"
+                />
               )}
             </Button>
           </DropdownMenuTrigger>

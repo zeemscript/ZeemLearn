@@ -5,6 +5,7 @@ import { Toaster } from "sonner";
 import NextTopLoader from "nextjs-toploader";
 import ToTop from "@/components/atoms/ToTop";
 const inter = Inter({ subsets: ["latin"] });
+
 export const metadata = {
   title: "ZeemLearn",
   description:
