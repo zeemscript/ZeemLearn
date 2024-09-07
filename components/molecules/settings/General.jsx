@@ -1,8 +1,11 @@
+"use client";
+import axios from "axios";
 import React from "react";
+import { useState } from "react";
 import { useAuth } from "@/lib/AuthContext";
 import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import { toast } from "sonner";
 import {
   Card,
   CardContent,
@@ -13,10 +16,47 @@ import {
 } from "@/components/ui/card";
 
 const General = () => {
-    const { user } = useAuth();
+  const { user } = useAuth();
+  const id = user._id;
+  const [form, setFormData] = useState({
+    username: "",
+    profilepic: null,
+  });
+
+ const handleChange = (event) => {
+   const { name, value, files } = event.target;
+   if (name === "profilepic" && files.length > 0) {
+     setFormData((prevFormData) => ({ ...prevFormData, profilepic: files[0] }));
+   } else {
+     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
+   }
+ };
+
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData();
+  formData.append("id", id); // Add the user's id
+  formData.append("username", form.username); // Add the username
+  if (form.profilepic) {
+    formData.append("profilepic", form.profilepic); // Add the profile picture file
+  }
+
+  try {
+    const response = await axios.put("/api/usersinfo", formData, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    console.log(response);
+    toast.success("Profile updated successfully!");
+  } catch (e) {
+    console.log(e);
+    toast.error("Oh no! Error editing info");
+  }
+};
+
   return (
     <div className="grid gap-6">
-      {/* User Profile Section */}
       <Card>
         <CardHeader>
           <CardTitle>Profile Settings</CardTitle>
@@ -25,57 +65,22 @@ const General = () => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <form className="flex flex-col gap-4">
+          <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <Input
-              placeholder="Display Name"
-              value={user ? user.displayName : ""}
+              placeholder="User Name"
+              onChange={handleChange}
+              value={user ? user.username : ""}
             />
             <Input
-              type="email"
-              placeholder="Email Address"
-              value={user ? user.email : ""}
+              type="file"
+              placeholder="Profile Picture"
+              onChange={handleChange}
+              value={user ? user.profilepic : ""}
             />
+            <Button type="submit">Save</Button>
           </form>
         </CardContent>
-        <CardFooter className="border-t px-6 py-4">
-          <Button>Save</Button>
-        </CardFooter>
-      </Card>
-
-      {/* Privacy Settings Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Privacy Settings</CardTitle>
-          <CardDescription>
-            Manage your privacy preferences, including who can view your
-            information.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form className="flex flex-col gap-4">
-            <div className="flex items-center space-x-2">
-              <Checkbox id="profile-visibility" defaultChecked />
-              <label
-                htmlFor="profile-visibility"
-                className="text-sm font-medium leading-none"
-              >
-                Allow others to view my profile.
-              </label>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Checkbox id="email-notifications" />
-              <label
-                htmlFor="email-notifications"
-                className="text-sm font-medium leading-none"
-              >
-                Receive email notifications for updates.
-              </label>
-            </div>
-          </form>
-        </CardContent>
-        <CardFooter className="border-t px-6 py-4">
-          <Button>Save</Button>
-        </CardFooter>
+        <CardFooter className="border-t px-6 py-4"></CardFooter>
       </Card>
     </div>
   );

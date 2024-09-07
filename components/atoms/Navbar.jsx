@@ -187,7 +187,7 @@ const Navbar = () => {
               {user && (
                 <Link
                   href="/dashboard"
-                  className="text-lg font-light hover:font-normal text-white hover:text-blue-500 font-serif transition-colors duration-200"
+                  className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
                 >
                   Dashboard
                 </Link>

@@ -53,6 +53,29 @@ export async function POST(req) {
 }
 
 
+
+// put request to database
+export async function PUT(req) {
+  try {
+    
+  } catch (e) {
+    console.log(error, e)
+  }
+}
+
+
+
+
+// patch request to database
+export async function PATCH(req) {
+  try {
+    
+  } catch (e) {
+    console.log(error, e)
+  }
+}
+
+
 // delete request to database
 export async function DELETE(req) {
   try {

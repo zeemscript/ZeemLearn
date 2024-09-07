@@ -1,7 +1,8 @@
 import React from 'react'
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import CountrySelector from '@/components/atoms/Countries';
+import { Select } from '@/components/ui/select';
 import {
   Card,
   CardContent,
@@ -36,11 +37,9 @@ const Advanced = () => {
               <label htmlFor="region" className="text-sm font-medium">
                 Preferred Region
               </label>
-              <select id="region" className="border rounded-md p-2">
-                <option>North America</option>
-                <option>Europe</option>
-                <option>Asia</option>
-              </select>
+              <Select id="region" className="border rounded-md p-2">
+                <CountrySelector />
+              </Select>
             </div>
           </form>
         </CardContent>
@@ -48,30 +47,32 @@ const Advanced = () => {
           <Button>Save Preferences</Button>
         </CardFooter>
       </Card>
-      <Card>
-        <CardHeader>
-          <CardTitle>API Access</CardTitle>
-          <CardDescription>
-            Manage your API keys and access settings.
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form className="flex flex-col gap-4">
-            <Input placeholder="Generate New API Key" />
-            <Button>Generate API Key</Button>
-            <div className="mt-4">
-              <p className="font-semibold">Existing API Keys:</p>
-              {/* List existing keys */}
-              <div className="border rounded-lg p-4 mt-2">
-                <p className="font-semibold">API Key: xxxxxxx</p>
+      <div className="mt-10">
+        <Card>
+          <CardHeader>
+            <CardTitle>API Access</CardTitle>
+            <CardDescription>
+              Manage your API keys and access settings.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <form className="flex flex-col gap-4">
+              <Input placeholder="Generate New API Key" />
+              <Button>Generate API Key</Button>
+              <div className="mt-4">
+                <p className="font-semibold">Existing API Keys:</p>
+                {/* List existing keys */}
+                <div className="border rounded-lg p-4 mt-2">
+                  <p className="font-semibold">API Key: xxxxxxx</p>
+                </div>
               </div>
-            </div>
-          </form>
-        </CardContent>
-        <CardFooter className="border-t px-6 py-4">
-          <Button>Save API Settings</Button>
-        </CardFooter>
-      </Card>
+            </form>
+          </CardContent>
+          <CardFooter className="border-t px-6 py-4">
+            <Button>Save API Settings</Button>
+          </CardFooter>
+        </Card>
+      </div>
     </div>
   );
 }
