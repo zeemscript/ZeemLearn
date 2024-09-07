@@ -49,6 +49,7 @@
     "dotenv": "^16.4.5",
     "embla-carousel-react": "^8.1.8",
     "firebase": "^10.12.5",
+    "firebase-admin": "^12.4.0",
     "input-otp": "^1.2.4",
     "lucide-react": "^0.424.0",
     "mongodb": "^6.8.0",
