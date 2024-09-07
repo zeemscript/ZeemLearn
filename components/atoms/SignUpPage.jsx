@@ -1,5 +1,3 @@
-// components/SignUp.js
-
 "use client";
 
 import React, { useState } from "react";
@@ -21,6 +19,7 @@ const SignUpPage = ({ onSuccess, setIsOpen }) => {
     confirmPassword: "",
   });
 
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
@@ -41,6 +40,7 @@ const SignUpPage = ({ onSuccess, setIsOpen }) => {
     }
 
     setSubmit(true);
+
     try {
       await register(formData.email, formData.password);
       toast.success("Account created successfully");
