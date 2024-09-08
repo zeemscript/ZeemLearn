@@ -1,7 +1,5 @@
-"use client";
-import axios from "axios";
-import React from "react";
-import { useState } from "react";
+"use client";import axios from "axios";
+import React, { useState } from "react";
 import { useAuth } from "@/lib/AuthContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -17,43 +15,29 @@ import {
 
 const General = () => {
   const { user } = useAuth();
-  const id = user._id;
-  const [form, setFormData] = useState({
-    username: "",
-    profilepic: null,
-  });
+  const [username, setUsername] = useState("");
 
- const handleChange = (event) => {
-   const { name, value, files } = event.target;
-   if (name === "profilepic" && files.length > 0) {
-     setFormData((prevFormData) => ({ ...prevFormData, profilepic: files[0] }));
-   } else {
-     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
-   }
- };
+  const handleChange = (e) => {
+    setUsername(e.target.value);
+  };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("Submitting:", { email: user.email, username });
+    try {
+      const response = await axios.patch(
+        "/api/usersinfo",
+        { email: user.email, username } // Send email and username
+      );
+      console.log(response.data);
+      toast.success("Profile updated successfully!");
+      setUsername("")
+    } catch (e) {
+      console.log(e);
+      toast.error("Oh no! Error editing info");
+    }
+  };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  const formData = new FormData();
-  formData.append("id", id); // Add the user's id
-  formData.append("username", form.username); // Add the username
-  if (form.profilepic) {
-    formData.append("profilepic", form.profilepic); // Add the profile picture file
-  }
-
-  try {
-    const response = await axios.put("/api/usersinfo", formData, {
-      headers: { "Content-Type": "multipart/form-data" },
-    });
-    console.log(response);
-    toast.success("Profile updated successfully!");
-  } catch (e) {
-    console.log(e);
-    toast.error("Oh no! Error editing info");
-  }
-};
 
   return (
     <div className="grid gap-6">
@@ -67,15 +51,10 @@ const handleSubmit = async (e) => {
         <CardContent>
           <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
             <Input
+              name="username"
               placeholder="User Name"
               onChange={handleChange}
-              value={user ? user.username : ""}
-            />
-            <Input
-              type="file"
-              placeholder="Profile Picture"
-              onChange={handleChange}
-              value={user ? user.profilepic : ""}
+              value={username}
             />
             <Button type="submit">Save</Button>
           </form>
