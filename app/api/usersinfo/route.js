@@ -1,48 +1,6 @@
 import { connectToDb } from "@/lib/ConnectTodb";
 import { MongoClient, ObjectId } from "mongodb"; // Make sure ObjectId is imported
 
-// GET method to check if ther is user stored before
-export async function GET(req) {
-  try {
-    const { searchParams } = new URL(req.url);
-    const email = searchParams.get("email");
-
-    if (!email) {
-      return new Response(
-        JSON.stringify({ error: "Email query parameter is required" }),
-        {
-          status: 400,
-          headers: { "Content-Type": "application/json" },
-        }
-      );
-    }
-
-    const db = await connectToDb();
-    const usersCollection = db.collection("users");
-
-    // Find the user by email
-    const user = await usersCollection.findOne({ email });
-
-    if (user) {
-      return new Response(JSON.stringify(user), {
-        status: 200,
-        headers: { "Content-Type": "application/json" },
-      });
-    } else {
-      return new Response(JSON.stringify({ message: "User not found" }), {
-        status: 404,
-        headers: { "Content-Type": "application/json" },
-      });
-    }
-  } catch (error) {
-    console.error("Error fetching user:", error);
-    return new Response(JSON.stringify({ error: "Failed to fetch user" }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
-  }
-}
-
 // POST method using new Response
 export async function POST(req) {
   try {
