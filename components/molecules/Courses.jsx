@@ -11,7 +11,6 @@ import { ClipboardCheck } from "lucide-react";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -39,6 +38,13 @@ export default function Course() {
 
     fetchCourses();
   }, []);
+
+  const handleCopyLink = (link) => {
+    navigator.clipboard.writeText(link).then(() => {
+      toast.success("Link copied to clipboard");
+    });
+  };
+
   return (
     <div>
       {loading ? (
@@ -69,14 +75,12 @@ export default function Course() {
                     <CardTitle className="text-lg font-semibold font-serif">
                       {course.snippet.title}
                     </CardTitle>
-                    <CardDescription className="text-gray-600 text-sm">
-                      Video Link:{" "}
-                      {`https://www.youtube.com/watch?v=${course.id.videoId}`}
-                    </CardDescription>
                   </div>
                 </CardHeader>
                 <CardContent className="p-4">
-                  <p className="text-gray-700">{course.snippet.description}</p>
+                  <p className="text-gray-700 x">
+                    {course.snippet.description}
+                  </p>
                 </CardContent>
                 <CardFooter className="p-4 flex justify-end">
                   <Link
@@ -89,6 +93,18 @@ export default function Course() {
                       Watch on YouTube
                     </Button>
                   </Link>
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto ml-2"
+                    onClick={() =>
+                      handleCopyLink(
+                        `https://www.youtube.com/watch?v=${course.id.videoId}`
+                      )
+                    }
+                  >
+                    <Clipboard className="mr-2" size={20} />
+                    Copy Link
+                  </Button>
                 </CardFooter>
               </Card>
             ))
