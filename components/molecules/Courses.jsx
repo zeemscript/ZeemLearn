@@ -11,6 +11,7 @@ import { ClipboardCheck } from "lucide-react";
 import {
   Card,
   CardContent,
+  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -20,7 +21,7 @@ export default function Course() {
   const [courses, setCourses] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
-  const [copied, setCopied] = React.useState(false);
+
   React.useEffect(() => {
     const fetchCourses = async () => {
       try {
@@ -40,14 +41,9 @@ export default function Course() {
   }, []);
 
   const handleCopyLink = (link) => {
-    if (copied) {
-      setCopied(false);
-    } else {
-      navigator.clipboard.writeText(link).then(() => {
-        setCopied(true);
-        toast.success("Link copied to clipboard");
-      });
-    }
+    navigator.clipboard.writeText(link).then(() => {
+      toast.success("Link copied to clipboard");
+    });
   };
 
   return (
@@ -80,12 +76,14 @@ export default function Course() {
                     <CardTitle className="text-lg font-semibold font-serif">
                       {course.snippet.title}
                     </CardTitle>
+                    <CardDescription className="text-gray-600 text-sm ">
+                      Video Link:{" "}
+                      {`https://www.youtube.com/watch?v=${course.id.videoId}`}
+                    </CardDescription>
                   </div>
                 </CardHeader>
                 <CardContent className="p-4">
-                  <p className="text-gray-700 x">
-                    {course.snippet.description}
-                  </p>
+                  <p className="text-gray-700 x">{course.snippet.description}</p>
                 </CardContent>
                 <CardFooter className="p-4 flex justify-end">
                   <Link
@@ -102,16 +100,10 @@ export default function Course() {
                     size="lg"
                     className="w-full sm:w-auto ml-2"
                     onClick={() =>
-                      handleCopyLink(
-                        `https://www.youtube.com/watch?v=${course.id.videoId}`
-                      )
+                      handleCopyLink(`https://www.youtube.com/watch?v=${course.id.videoId}`)
                     }
                   >
-                    {copied ? (
-                      <ClipboardCheck className="mr-2" size={20} />
-                    ) : (
-                      <Clipboard className="mr-2" size={20} />
-                    )}
+                    <Clipboard className="mr-2" size={20} />
                     Copy Link
                   </Button>
                 </CardFooter>
