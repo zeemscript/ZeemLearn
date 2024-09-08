@@ -8,12 +8,11 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useAuth } from "@/lib/AuthContext";
+import SearchBar from "@/components/atoms/SearchBar";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
-  LineChart,
   House,
   PanelLeft,
-  Search,
   LayoutDashboard,
   LogOut,
   Settings,
@@ -98,12 +97,7 @@ const DashNavbar = () => {
           </Link>
         </div>
         <div className="relative ml-auto flex-1 md:grow-0">
-          <Input
-            type="search"
-            placeholder="Search..."
-            icon={<Search className=" h-4 w-4 text-black " />}
-            className="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]"
-          />
+          <SearchBar />
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
