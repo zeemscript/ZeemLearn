@@ -20,7 +20,7 @@ export default function Course() {
   const [courses, setCourses] = React.useState([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
-
+  const [copied, setCopied] = React.useState(false);
   React.useEffect(() => {
     const fetchCourses = async () => {
       try {
@@ -39,11 +39,16 @@ export default function Course() {
     fetchCourses();
   }, []);
 
-  const handleCopyLink = (link) => {
+const handleCopyLink = (link) => {
+  if (copied) {
+    setCopied(false);
+  } else {
     navigator.clipboard.writeText(link).then(() => {
+      setCopied(true);
       toast.success("Link copied to clipboard");
     });
-  };
+  }
+};
 
   return (
     <div>
@@ -102,7 +107,11 @@ export default function Course() {
                       )
                     }
                   >
-                    <Clipboard className="mr-2" size={20} />
+                    {copied ? (
+                      <Clipboard className="mr-2" size={20} />
+                    ) : (
+                      <ClipboardCheck className="mr-2" size={20} />
+                    )}
                     Copy Link
                   </Button>
                 </CardFooter>
