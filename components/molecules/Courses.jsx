@@ -39,16 +39,16 @@ export default function Course() {
     fetchCourses();
   }, []);
 
-const handleCopyLink = (link) => {
-  if (copied) {
-    setCopied(false);
-  } else {
-    navigator.clipboard.writeText(link).then(() => {
-      setCopied(true);
-      toast.success("Link copied to clipboard");
-    });
-  }
-};
+  const handleCopyLink = (link) => {
+    if (copied) {
+      setCopied(false);
+    } else {
+      navigator.clipboard.writeText(link).then(() => {
+        setCopied(true);
+        toast.success("Link copied to clipboard");
+      });
+    }
+  };
 
   return (
     <div>
@@ -108,9 +108,9 @@ const handleCopyLink = (link) => {
                     }
                   >
                     {copied ? (
-                      <Clipboard className="mr-2" size={20} />
-                    ) : (
                       <ClipboardCheck className="mr-2" size={20} />
+                    ) : (
+                      <Clipboard className="mr-2" size={20} />
                     )}
                     Copy Link
                   </Button>
