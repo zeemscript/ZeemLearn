@@ -42,6 +42,9 @@ const Navbar = () => {
   const handleToggleForm = () => {
     setIsLogin(!isLogin);
   };
+  const handleClick = () => {
+    document.querySelector("button[data-state=open]").click();
+  };
 
   const handleLogout = async () => {
     try {
@@ -167,12 +170,14 @@ const Navbar = () => {
             <div className="flex flex-col gap-4 mt-4">
               <Link
                 href="/"
+                onClick={handleClick}
                 className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
               >
                 Home
               </Link>
               <Link
                 href={"#aboutus"}
+                onClick={handleClick}
                 className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
               >
                 About
@@ -180,6 +185,7 @@ const Navbar = () => {
 
               <Link
                 href="#courses"
+                onClick={handleClick}
                 className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
               >
                 Courses
@@ -187,6 +193,7 @@ const Navbar = () => {
               {user && (
                 <Link
                   href="/dashboard"
+                  onClick={handleClick}
                   className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
                 >
                   Dashboard
@@ -194,18 +201,21 @@ const Navbar = () => {
               )}
               <Link
                 href="#vision"
+                onClick={handleClick}
                 className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
               >
                 Our Vision
               </Link>
               <Link
                 href="/blogs"
+                onClick={handleClick}
                 className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
               >
                 Blog
               </Link>
               <Link
                 href="#contact"
+                onClick={handleClick}
                 className="text-lg font-light hover:font-normal text-black hover:text-blue-500 font-serif transition-colors duration-200"
               >
                 Contact Us
