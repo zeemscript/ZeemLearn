@@ -166,32 +166,32 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
           {/* Social Media Icons */}
           <div className="flex space-x-6 mb-6 md:mb-0">
-            <Link href="https://www.facebook.com/teachleadx" passHref>
+            <Link href="https://www.facebook.com/sakariyah.abdulhazeem" passHref>
               <div className="hover:text-blue-500 cursor-pointer">
                 <FaFacebookF size={25} />
               </div>
             </Link>
-            <Link href="https://x.com/teachleadx" passHref>
+            <Link href="https://x.com/zeemscript" passHref>
               <div className="hover:text-blue-500 cursor-pointer">
                 <FaTwitter size={25} />
               </div>
             </Link>
-            <Link href="https://www.instagram.com/teachleadx/" passHref>
+            <Link href="https://www.instagram.com/zeemscript" passHref>
               <div className="hover:text-blue-500 cursor-pointer">
                 <FaInstagram size={25} />
               </div>
             </Link>
-            <Link href="https://www.linkedin.com/company/teachleadx/" passHref>
+            <Link href="https://www.linkedin.com/" passHref>
               <div className="hover:text-blue-500 cursor-pointer">
                 <FaLinkedinIn size={25} />
               </div>
             </Link>
-            <Link href="https://discord.com/channels/teachleadx" passHref>
+            <Link href="https://discord.com/" passHref>
               <div className="hover:text-blue-500 cursor-pointer">
                 <FaDiscord size={25} />
               </div>
             </Link>
-            <Link href="https://youtube.com/@teachleadx" passHref>
+            <Link href="https://youtube.com/" passHref>
               <div className="hover:text-blue-500 cursor-pointer">
                 <FaYoutube size={25} />
               </div>
