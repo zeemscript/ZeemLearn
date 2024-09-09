@@ -5,13 +5,13 @@ const testimonials = [
   {
     name: "John Doe",
     role: "Software Engineer",
-    image: "/images/user3.jpg",
+    image: "/images/2.png",
     text: "This platform has completely transformed the way I work. The courses are top-notch and have helped me improve my skills significantly.",
   },
   {
     name: "Jane Smith",
     role: "UI/UX Designer",
-    image: "/images/user2.jpg",
+    image: "/images/2.png",
     text: "The best learning experience I have ever had! The content is well-structured and the instructors are very knowledgeable.",
   },
   {

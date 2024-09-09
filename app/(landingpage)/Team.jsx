@@ -4,22 +4,22 @@ const teamMembers = [
   {
     name: "John Doe",
     role: "CEO & Founder",
-    image: "/images/aleem.jpg",
+    image: "/images/2.png",
   },
   {
     name: "Jane Smith",
     role: "Chief Technology Officer",
-    image: "/images/azeemah.jpg",
+    image: "/images/2.png",
   },
   {
     name: "Michael Brown",
     role: "Lead Designer",
-    image: "/images/user1.jpg",
+    image: "/images/2.png",
   },
   {
     name: "Emily Davis",
     role: "Marketing Head",
-    image: "/images/aleemah.jpg",
+    image: "/images/2.png",
   },
 ];
 

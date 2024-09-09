@@ -38,6 +38,9 @@ const DashNavbar = () => {
       toast.error("Error during logout:", error);
     }
   };
+  const handleClick = () => {
+    document.querySelector("button[data-state=open]").click();
+  };
 
   return (
     <div>
@@ -51,7 +54,11 @@ const DashNavbar = () => {
           </SheetTrigger>
           <SheetContent side="left" className="sm:max-w-xs bg-gray-900">
             <nav className="grid gap-6 text-lg font-medium">
-              <Link href="/" className="flex items-center">
+              <Link
+                href="/"
+                onClick={handleClick}
+                className="flex items-center"
+              >
                 <Image
                   alt="zeemlearn Logo"
                   src="/images/zeemlearnlogo.png"
@@ -63,6 +70,7 @@ const DashNavbar = () => {
 
               <Link
                 href="/"
+                onClick={handleClick}
                 className="flex items-center gap-4 px-2.5 text-text-gray-400 text-white"
               >
                 <House className="h-5 w-5" />
@@ -70,6 +78,7 @@ const DashNavbar = () => {
               </Link>
               <Link
                 href="/dashboard"
+                onClick={handleClick}
                 className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-gray-400 text-white"
               >
                 <LayoutDashboard className="h-5 w-5" />
@@ -77,6 +86,7 @@ const DashNavbar = () => {
               </Link>
               <Link
                 href="/dashboard/settings"
+                onClick={handleClick}
                 className="flex items-center gap-4 px-2.5 text-muted-foreground hover:text-gray-400 text-white"
               >
                 <Settings className="h-5 w-5" />
