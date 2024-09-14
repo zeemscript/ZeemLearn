@@ -14,7 +14,8 @@ export async function GET() {
       part: "snippet",
       maxResults: 50,
       q: "programming+courses",
-      type: "video",
+      order: "rating",
+      type: "hqvideo",
       key: "AIzaSyBvvWNt_2ZqnfbtVSAnkmoOOOk4y5GExfA",
     };
     const response = await axios.get(url, { params });
@@ -39,8 +40,9 @@ export async function POST(req) {
     const params = {
       part: "snippet",
       maxResults: 50,
-      q: `${q} +courses`,
-      type: "video",
+      q: `${q} + courses`,
+      order: "rating",
+      type: "hqvideo",
       key: "AIzaSyBvvWNt_2ZqnfbtVSAnkmoOOOk4y5GExfA",
     };
     const response = await axios.get(url, { params });

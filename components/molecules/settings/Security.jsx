@@ -4,6 +4,8 @@ import { useAuth } from "@/lib/AuthContext";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
+import { toast } from "sonner";
+import { logout } from "@/lib/auth";
 import {
   Card,
   CardContent,
@@ -12,22 +14,23 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useRouter } from "next/navigation";
+
 
 const Security = () => {
   const { user } = useAuth();
-  const router = useRouter();
+  const email = user.email;
 
   const handleDelete = async () => {
     try {
-      // Use params to send the email
-      const response = await axios.delete("/api/usersinfo", {
-        params: { email: user.email },
-      });
+      const response = await axios.delete(`/api/usersinfo?email=${email}`);
+      await user.delete();
+      await logout();
+      toast.success("Account deleted successfully");
       console.log("User deleted:", response.data.message);
-      router.push("/");
+      
     } catch (error) {
       console.error("Error deleting user:", error);
+      toast.error("Error deleting user");
     }
   };
 
@@ -73,7 +76,7 @@ const Security = () => {
           </CardHeader>
           <CardContent>
             <p className="text-red-600">
-              Warning: Deactivating your account will disable access to all your
+              Warning: Deleting your account will disable access to all your
               data.
             </p>
             <Button

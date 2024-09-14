@@ -95,7 +95,7 @@ const DashNavbar = () => {
             </nav>
           </SheetContent>
         </Sheet>
-        <div className="hidden md:flex">
+        <div className="hidden sm:flex">
           <Link href="/" className="flex items-center">
             <Image
               alt="zeemlearn Logo"

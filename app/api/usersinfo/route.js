@@ -1,12 +1,12 @@
 import { connectToDb } from "@/lib/ConnectTodb";
-import { MongoClient, ObjectId } from "mongodb"; // Make sure ObjectId is imported
-
+import { ObjectId } from "mongodb";
 
 export async function GET(req) {
-  const body = await req.json();
+  const { searchParams } = new URL(req.url);
+  const email = searchParams.get("email");
   const db = await connectToDb();
   const collection = db.collection("users");
-  const user = await collection.findOne({ email: body.email });
+  const user = await collection.findOne({ email });
   if (user) {
     return new Response(JSON.stringify(user), {
       status: 200,
@@ -23,8 +23,7 @@ export async function GET(req) {
   }
 }
 
-
-// POST method using new Response
+// POST method for creating user
 export async function POST(req) {
   try {
     const body = await req.json();
@@ -48,7 +47,9 @@ export async function POST(req) {
   }
 }
 
-// PUT method using new Response
+
+
+// PUT method
 export async function PUT(req) {
   try {
     const body = await req.json();
@@ -87,8 +88,6 @@ export async function PUT(req) {
   }
 }
 
-
-
 // PATCH method using new Response
 export async function PATCH(req) {
   try {
@@ -96,18 +95,15 @@ export async function PATCH(req) {
     const db = await connectToDb();
     const usersCollection = db.collection("users");
     const result = await usersCollection.updateOne(
-      { email }, 
-      { $set: { username } } 
+      { email },
+      { $set: { username } }
     );
 
     if (result.matchedCount === 0) {
-      return new Response(
-        JSON.stringify({ error: "User not found" }),
-        {
-          status: 404,
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+      return new Response(JSON.stringify({ error: "User not found" }), {
+        status: 404,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
     return new Response(
@@ -126,29 +122,21 @@ export async function PATCH(req) {
   }
 }
 
-
-
-
-// DELETE method using new Response
+// DELETE method
 export async function DELETE(req) {
   try {
-    const { email } = await req.json(); // Extract email from request body
-
+     const { searchParams } = new URL(req.url);
+     const email = searchParams.get("email");
     const db = await connectToDb();
     const usersCollection = db.collection("users");
 
-    // Delete the user by email
     const result = await usersCollection.deleteOne({ email });
 
-    // Check if the deletion was successful
     if (result.deletedCount === 0) {
-      return new Response(
-        JSON.stringify({ error: "User not found" }),
-        {
-          status: 404,
-          headers: { "Content-Type": "application/json" },
-        }
-      );
+      return new Response(JSON.stringify({ error: "User not found" }), {
+        status: 404,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
     return new Response(

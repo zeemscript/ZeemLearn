@@ -17,18 +17,14 @@ export async function GET(req) {
 
     const db = await connectToDb();
     const usersCollection = db.collection("users");
-
-    // Find the user by email
     const user = await usersCollection.findOne({ email });
 
     if (user) {
-      // If the user exists, return the existing user data
       return new Response(JSON.stringify(user), {
         status: 200,
         headers: { "Content-Type": "application/json" },
       });
     } else {
-      // If the user doesn't exist, return 404 or similar
       return new Response(JSON.stringify({ message: "User not found" }), {
         status: 404,
         headers: { "Content-Type": "application/json" },
@@ -46,7 +42,7 @@ export async function GET(req) {
 export async function POST(req) {
   try {
     const userData = await req.json();
-    console.log("Received userData:", userData); // Log received data
+    console.log("Received userData:", userData);
 
     if (!userData.email) {
       return new Response(JSON.stringify({ error: "Email is required" }), {
@@ -67,7 +63,7 @@ export async function POST(req) {
       headers: { "Content-Type": "application/json" },
     });
   } catch (error) {
-    console.error("Error creating user:", error.message); // Log the error message
+    console.error("Error creating user:", error); // Log the entire error object
     return new Response(JSON.stringify({ error: "Failed to create user" }), {
       status: 500,
       headers: { "Content-Type": "application/json" },

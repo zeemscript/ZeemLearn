@@ -1,12 +1,17 @@
 "use client";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import Link from "next/link";
 import { Check } from "lucide-react";
 import { CheckCheck } from "lucide-react";
 import { ShieldCheck } from "lucide-react";
 import { ShieldX } from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { useAuth } from "@/lib/AuthContext";
 import {
   Activity,
   ArrowUpRight,
@@ -14,9 +19,6 @@ import {
   DollarSign,
   Users,
 } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -35,7 +37,8 @@ import {
 
 export default function Dashboard() {
   const [users, setUsers] = useState([]);
-
+  const { user } = useAuth();
+  const router = useRouter();
   useEffect(() => {
     axios
       .get("/api/users")
@@ -48,8 +51,8 @@ export default function Dashboard() {
         toast.error("Error Getting All Users");
       });
   }, []);
-
-  return (
+  if (user.email === "sakariyahabdulhazeem@gmail.com") {
+   return (
     <div className="flex min-h-screen w-full flex-col pt-20">
       <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
         <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4">
@@ -139,28 +142,31 @@ export default function Dashboard() {
                 </TableHeader>
                 <TableBody>
                   {users.map((user) => (
-                   <TableRow  key={user.id}>
-                    <TableCell>
-                      <div className="font-medium">{user.username}</div>
-                      <div className="hidden text-sm text-muted-foreground md:inline">
-                        {user.email}
-                      </div>
-                    </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      Sale
-                    </TableCell>
-                    <TableCell className="hidden xl:table-column">
-                      <Badge className="text-xs" variant="outline">
-                        Approved
-                      </Badge>
-                    </TableCell>
-                    <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
-                      2023-06-27
-                    </TableCell>
-                    <TableCell className="text-right">{user.admin ? <ShieldCheck/> : <ShieldX/>}</TableCell>
-                  </TableRow> 
-                ))}
-                
+                    <TableRow key={user.id}>
+                      <TableCell>
+                        <div className="font-medium">
+                          {user.username ? user.username : "no user name"}
+                        </div>
+                        <div className="hidden text-sm text-muted-foreground md:inline">
+                          {user.email}
+                        </div>
+                      </TableCell>
+                      <TableCell className="hidden xl:table-column">
+                        Sale
+                      </TableCell>
+                      <TableCell className="hidden xl:table-column">
+                        <Badge className="text-xs" variant="outline">
+                          Approved
+                        </Badge>
+                      </TableCell>
+                      <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
+                        2023-06-27
+                      </TableCell>
+                      <TableCell className="text-right">
+                        {user.admin ? <ShieldCheck /> : <ShieldX />}
+                      </TableCell>
+                    </TableRow>
+                  ))}
                 </TableBody>
               </Table>
             </CardContent>
@@ -185,7 +191,7 @@ export default function Dashboard() {
                     </p>
                   </div>
                   <div className="ml-auto font-medium">
-                    {user.googleloggedin ? <CheckCheck /> : <Check/>}
+                    {user.googleloggedin ? <CheckCheck /> : <Check />}
                   </div>
                 </div>
               ))}
@@ -195,4 +201,9 @@ export default function Dashboard() {
       </main>
     </div>
   );
+  } else {
+    toast.info("Only admin have acess to this route")
+    router.push("/signin")
+}
+ 
 }

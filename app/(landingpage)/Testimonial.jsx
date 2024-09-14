@@ -15,8 +15,8 @@ const testimonials = [
     text: "The best learning experience I have ever had! The content is well-structured and the instructors are very knowledgeable.",
   },
   {
-    name: "Alice Johnson",
-    role: "Product Manager",
+    name: "Sakariyah Abdulhazeem",
+    role: "Software Engineer",
     image: "/images/user1.jpg",
     text: "A game-changer in the industry. The courses are relevant, up-to-date, and extremely useful for my career development.",
   },
