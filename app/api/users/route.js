@@ -1,4 +1,11 @@
 import { connectToDb } from "@/lib/ConnectTodb";
+
+if (process.env.NODE_ENV === "production") {
+  return new Response("Route not available in production", {
+    status: 404,
+    headers: { "Content-Type": "text/plain" },
+  });
+}
 export async function GET() {
   try {
     const db = await connectToDb();

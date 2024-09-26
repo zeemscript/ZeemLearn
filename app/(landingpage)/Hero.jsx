@@ -21,7 +21,7 @@ const Hero = () => {
         <LinkProtector href="/dashboard" className="text-center">
           <Button
             size="lg"
-            className="px-9 py-3 text-lg md:text-xl font-semibold bg-gray-900 hover:bg-gray-800 transition-all duration-300 ease-in-out shadow-xl"
+            className="px-9 py-3 text-lg md:text-xl font-semibold bg-gray-200 hover:bg-gray-500 transition-all duration-300 ease-in-out shadow-xl"
           >
             Get Started
           </Button>
